@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_08_135839) do
+ActiveRecord::Schema.define(version: 2023_02_09_134957) do
+
+  create_table "bookmarks", force: :cascade do |t|
+    t.integer "numeral"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.text "comment_field"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "managers", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -39,6 +51,25 @@ ActiveRecord::Schema.define(version: 2023_02_08_135839) do
     t.boolean "withdrawal", default: false
     t.index ["email"], name: "index_members_on_email", unique: true
     t.index ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.text "title"
+    t.string "country", default: "日本"
+    t.string "prefectues", default: "東京"
+    t.string "area"
+    t.text "access"
+    t.text "nearby_information"
+    t.text "go_around"
+    t.text "impressions"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.text "register"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
