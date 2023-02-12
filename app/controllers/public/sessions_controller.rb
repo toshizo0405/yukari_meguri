@@ -1,6 +1,24 @@
 # frozen_string_literal: true
 
 class Public::SessionsController < Devise::SessionsController
+  def guest_sign_in
+    member = Member.guest
+    sign_in member
+    redirect_to root_path
+  end
+
+  protected
+
+  def regect_member
+    @member =Member.find_by(email: params[:member][:email])
+    if @member
+      if @member.valid_password?(params[:member][:encrypted_password]) && (@member.withdrawal == false)
+      redirect_to new_member_registration
+      end
+    end
+  end
+
+end
   # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
@@ -24,4 +42,4 @@ class Public::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
-end
+

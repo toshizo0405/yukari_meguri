@@ -14,9 +14,15 @@ Rails.application.routes.draw do
     registrations: "public/registrations",
     sessions: 'public/sessions'
   }
-  
+
+  devise_scope :member do
+    post 'members/guest_sign_in',to: 'public/sessions#guest_sign_in'
+  end
+
   scope module: :public do
-    
+    root 'homes#top'
+    get 'members/unsubscribe' => 'members#unsubscribe'#退会確認画面
+    patch 'members/withdraw' => 'members#withdraw' #退会処理
   end
 
 
