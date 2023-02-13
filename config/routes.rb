@@ -27,8 +27,7 @@ Rails.application.routes.draw do
     get 'members/information/edit' => 'members#edit'#会員の登録情報編集画面
     patch 'members/information' => 'members#update'#会員の登録情報更新
     get 'members' => 'members#index'#会員の投稿履歴一覧画面
-
-
+    
   end
 
 
