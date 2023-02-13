@@ -9,6 +9,14 @@ class Public::SessionsController < Devise::SessionsController
 
   protected
 
+  def after_sign_in(resource)
+    root_path
+  end
+
+  def after_sign_out_path_for(resource)
+    root_path
+  end
+
   def regect_member
     @member =Member.find_by(email: params[:member][:email])
     if @member
