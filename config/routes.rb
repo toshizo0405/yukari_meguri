@@ -21,13 +21,20 @@ Rails.application.routes.draw do
 
   scope module: :public do
     root 'homes#top'#トップ画面
+
     get 'members/unsubscribe' => 'members#unsubscribe'#退会確認画面
     patch 'members/withdraw' => 'members#withdraw' #退会処理
     get 'members/my_page' => 'members#show'#マイページ
     get 'members/information/edit' => 'members#edit'#会員の登録情報編集画面
     patch 'members/information' => 'members#update'#会員の登録情報更新
     get 'members' => 'members#index'#会員の投稿履歴一覧画面
-    
+
+    resources :posts,only:[:index,:show,:new,:create]
+    get 'posts/submission/edit' => 'posts#edit'#投稿内容編集画面
+    patch 'posts/submission' => 'posts#update'#投稿内容の更新
+    delete 'posts/submission' => 'posts#destroy'#投稿削除処理
+    get 'posts/unsubscribe' => 'posts#unsubscribe'#投稿確認画面
+
   end
 
 

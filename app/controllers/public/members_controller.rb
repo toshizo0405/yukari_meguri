@@ -24,6 +24,10 @@ class Public::MembersController < ApplicationController
   def unsubscribe
     @member = current_member
   end
+  
+  def index
+    
+  end
 
 end
 
