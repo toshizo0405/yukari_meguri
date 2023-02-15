@@ -39,5 +39,5 @@ end
 private
 
 def posts_params
-  params.require(:post).permit(:title,:country,:prefectues,:area,:access,:nearby_information,:go_around,:impressions)
+  params.require(:post).permit(:title,:prefectues,:area,:access,:nearby_information,:go_around,:impressions)
 end
