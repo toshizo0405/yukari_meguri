@@ -55,8 +55,7 @@ ActiveRecord::Schema.define(version: 2023_02_09_134957) do
 
   create_table "posts", force: :cascade do |t|
     t.text "title"
-    t.string "country", default: "日本"
-    t.string "prefectues", default: "東京"
+    t.string "prefectues"
     t.string "area"
     t.text "access"
     t.text "nearby_information"
