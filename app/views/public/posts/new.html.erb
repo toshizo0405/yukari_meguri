@@ -1,0 +1,7 @@
+
+<h2>投稿入力フォーム</h2>
+
+<%= form_with model: @post_input,url: "/posts/unsubscribe",method: :get do |f| %>
+    <%= f.label :"タイトル" %> <%= f.text_field :title %>
+    <%= f.file_field :"画像" %> <%= f.text_field :image,placeholder : "選択されていません", accept: "image/*"  %>
+    
