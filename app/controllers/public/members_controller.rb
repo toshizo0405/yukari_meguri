@@ -2,6 +2,7 @@ class Public::MembersController < ApplicationController
 
   def show
     @member = current_member
+    @posts = @member.posts.page(params[:page])
   end
 
   def edit
@@ -24,9 +25,9 @@ class Public::MembersController < ApplicationController
   def unsubscribe
     @member = current_member
   end
-  
+
   def index
-    
+
   end
 
 end
