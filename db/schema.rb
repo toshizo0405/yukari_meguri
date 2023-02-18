@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_09_134957) do
+ActiveRecord::Schema.define(version: 2023_02_18_083613) do
 
   create_table "bookmarks", force: :cascade do |t|
     t.integer "numeral"
@@ -66,8 +66,15 @@ ActiveRecord::Schema.define(version: 2023_02_09_134957) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "tag_middles", force: :cascade do |t|
+    t.integer "tags_id"
+    t.integer "posts_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "tags", force: :cascade do |t|
-    t.text "register"
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
