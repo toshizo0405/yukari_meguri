@@ -67,8 +67,8 @@ ActiveRecord::Schema.define(version: 2023_02_18_083613) do
   end
 
   create_table "tag_middles", force: :cascade do |t|
-    t.integer "tags_id"
-    t.integer "posts_id"
+    t.integer "tag_id"
+    t.integer "post_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
