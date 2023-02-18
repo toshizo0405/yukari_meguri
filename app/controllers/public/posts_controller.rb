@@ -47,5 +47,5 @@ end
 private
 
 def posts_params
-  params.require(:post).permit(:title,:prefectues,:area,:access,:nearby_information,:go_around,:impressions,:image)
+  params.require(:post).permit(:title,:prefectues,:area,:access,:nearby_information,:go_around,:impressions,:image, tag_ids: [] )
 end

@@ -16,6 +16,8 @@
     <%= f.label :"周辺情報" %> <%= f.text_area :nearby_information %>
     <%= f.label :"巡り方" %> <%= f.text_area :go_around %>
     <%= f.label :"感想" %> <%= f.text_area :impressions %>
-    <%= f.label :"タグ登録" %>
+    <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
+        <%= f.label :"タグ登録" %> <%= tag.check_box %> <%= tag.text %>
+    <% end %>
     <%= f.submit '確認画面に進む'%>
 <% end %>
