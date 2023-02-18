@@ -20,18 +20,26 @@ class Public::PostsController < ApplicationController
 
   end
 
-  def unsubscribe
-
-  end
-
   def new
     @post_input = Post.new
+  end
+
+  def unsubscribe
+    @post_input = Post.new(posts_params)
+    @post_input.member_id = current_member.id
+     if @post_input.invalid? #入力項目に空のものがあれば入力画面に遷移
+      render :new
+     end
   end
 
   def create
     @post_input = Post.new(posts_params)
     @post_input.save
     redirect_to posts_unsubscribe_path
+  end
+
+  def complete
+
   end
 
 end

@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 2023_02_09_134957) do
   end
 
   create_table "posts", force: :cascade do |t|
+    t.integer "member_id"
     t.text "title"
     t.string "prefectues"
     t.string "area"

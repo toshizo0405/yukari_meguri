@@ -1,0 +1,13 @@
+<h2>投稿確認</h2>
+
+<%= form_with model:@post_input, url:posts_complete_path,method: :post do |f| %>
+  <p><%= f.hidden_field :title %></p>
+  <p><%= f.hidden_field :imege %></p>
+  <p><%= f.hidden_field :prefectues %></p>
+  <p><%= f.hidden_field :area %></p>
+  <p><%= f.hidden_field :access %></p>
+  <p><%= f.hidden_field :nearby_information %></p>
+  <p><%= f.hidden_field :go_around %></p>
+  <p><%= f.hidden_field :impressions %></p>
+  <p><%= f.submit '投稿する' %></p>
+<% end %>
