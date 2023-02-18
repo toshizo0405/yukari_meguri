@@ -1,7 +1,7 @@
-#Manager.create!(
-  #email: 'admin@manager',
-  #password: '199204',
-  #)
+Manager.create!(
+  email: 'admin@manager',
+  password: '199204',
+  )
 
 #Member.create!(
   #email: 'public@member',

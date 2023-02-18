@@ -15,7 +15,10 @@
   <p><%= f.text_field :nearby_information,readonly: true %></p>
   <p><%= f.text_field :go_around,readonly: true %></p>
   <p><%= f.text_field :impressions,readonly: true %></p>
-  
+  <p><%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name, checked: @tag_ids) do |tag| %>
+        <%= f.label :"タグ登録" %>
+        <%= tag.check_box(disabled: true) %> <%= tag.text %></p>
+     <% end %>
   <p><%= f.submit '投稿する' %></p>
 <% end %>
 

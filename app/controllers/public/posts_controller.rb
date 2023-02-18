@@ -27,6 +27,7 @@ class Public::PostsController < ApplicationController
   def unsubscribe
     @post_input = Post.new(posts_params)
     @post_input.member_id = current_member.id
+    @tag_ids = params[:post][:tag_ids]
      if @post_input.invalid? #入力項目に空のものがあれば入力画面に遷移
       render :new
      end
@@ -47,5 +48,5 @@ end
 private
 
 def posts_params
-  params.require(:post).permit(:title,:prefectues,:area,:access,:nearby_information,:go_around,:impressions,:image, tag_ids: [] )
+  params.require(:post).permit(:title,:prefectues,:area,:access,:nearby_information,:go_around,:impressions,:image,tags_ids: [] )
 end
