@@ -35,9 +35,13 @@ class Public::PostsController < ApplicationController
 
   def create
     @post_input = Post.new(posts_params)
-    @post_input.save
+   if  @post_input.save
     redirect_to posts_unsubscribe_path
+   else
+    render :new
+   end
   end
+  
 
   def complete
 
