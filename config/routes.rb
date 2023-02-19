@@ -30,8 +30,8 @@ Rails.application.routes.draw do
     get 'members' => 'members#index'#会員の投稿履歴一覧画面
 
     get 'posts/complete' => 'posts#complete'#投稿完了画面
-    post 'posts/unsubscribe' => 'posts#unsubscribe'#投稿確認画面
-    get 'posts/:id/confirm' => 'posts#confirm',as: :confirm
+    post 'posts/unsubscribe' => 'posts#unsubscribe'#投稿内容の保存
+    get 'posts/:id/confirm' => 'posts#confirm',as: :confirm#投稿確認画面
     resources :posts,only:[:index,:show,:new,:create]
     get 'posts/submission/edit' => 'posts#edit'#投稿内容編集画面
     patch 'posts/submission' => 'posts#update'#投稿内容の更新
