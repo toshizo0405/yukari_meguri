@@ -2,6 +2,7 @@ class Public::PostsController < ApplicationController
 
   def index
     @posts=Post.page(params[:pege])
+
   end
 
   def show
@@ -21,27 +22,52 @@ class Public::PostsController < ApplicationController
   end
 
   def new
+    if params[:id]
+      @post_input = current_member.posts.find(params[:id])
+    else
     @post_input = Post.new
+    end
   end
 
   def unsubscribe
+    @post = current_member.posts.find_by(status: 0)
+    if @post.nil?
     @post_input = Post.new(posts_params)
+    @post_input.image.attach(params[:post][:image])
     @post_input.member_id = current_member.id
     @tag_ids = params[:post][:tag_ids]
-     if @post_input.invalid? #入力項目に空のものがあれば入力画面に遷移
+     if @post_input.save
+       redirect_to  confirm_path(@post_input.id,tag_ids: @tag_ids)
+     else
       render :new
      end
+    else
+    if params[:post][:image]
+    @post.image.purge
+    @post.image.attach(params[:post][:image])
+    end
+    @post.member_id = current_member.id
+    @tag_ids = params[:post][:tag_ids]
+      if @post.update(posts_params)
+       redirect_to  confirm_path(@post.id,tag_ids: @tag_ids)
+     else
+      render :new
+     end
+    end
+
+  end
+
+  def confirm
+     @post_input = Post.find(params[:id])
+     @tag_ids = params[:tag_ids]
   end
 
   def create
-    @post_input = Post.new(posts_params)
-   if  @post_input.save
-    redirect_to posts_unsubscribe_path
-   else
-    render :new
-   end
+    @post_input = Post.find(params[:id])
+    @post_input.update(status:1)
+    redirect_to posts_complete_path
   end
-  
+
 
   def complete
 
