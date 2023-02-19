@@ -1,5 +1,5 @@
 <h2>投稿確認</h2>
-
+<%= flash[:notice] %>
 
 <%= form_with model: @post_input, url: posts_path(id: params[:id]),multipart: true,method: :post do |f| %>
   <p><%= f.label "タイトル" %></p>
@@ -8,7 +8,7 @@
 
   <p><%= f.label "画像" %></p>
 
-  <p><%= image_tag @post_input.image %></p>
+  <p><%= image_tag @post_input.image if @post_input.image.attached? %></p>
   <%= f.hidden_field :image, value: @post_input.image %>
 
   <p><%= f.label "都道府県" %></p>
