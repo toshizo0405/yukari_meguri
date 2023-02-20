@@ -3,6 +3,8 @@ class Public::PostsController < ApplicationController
   def index
     @posts=Post.page(params[:pege])
 
+
+
   end
 
   def show

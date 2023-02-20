@@ -7,7 +7,6 @@
   <%= f.hidden_field :title, value: @post_input.title %>
 
   <p><%= f.label "画像" %></p>
-
   <p><%= image_tag @post_input.image if @post_input.image.attached? %></p>
   <%= f.hidden_field :image, value: @post_input.image %>
 
