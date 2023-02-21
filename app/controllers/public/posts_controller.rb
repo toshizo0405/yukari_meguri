@@ -37,6 +37,7 @@ class Public::PostsController < ApplicationController
       @post_input.member_id = current_member.id
       @tag_ids = params[:post][:tag_ids]
      if @post_input.save
+       @post_input.seve(params[:post][:tag_ids])
        flash[:notice] =  "まだ投稿されていません。投稿内容を確認し、投稿ボタンをクリックしてください"
        redirect_to  confirm_path(@post_input.id,tag_ids: @tag_ids)
      else
