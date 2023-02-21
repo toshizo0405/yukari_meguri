@@ -16,7 +16,7 @@
   <tbody>
     <tr>
       <td><%= input.created_at.strftime('%Y/%m/%d') %></td>
-      <td><%= link_to input.title,post_path(@posts) %></td>
+      <td><%= link_to input.title,post_path(input.id) %></td>
     </tr>
   </tbody>
   <% end %>

@@ -4,7 +4,9 @@
 <p><%= @post_detail.title %></p>
 
 <p>画像</p>
-<p><%= @post_detail.image %></p>
+<% if @post_detail.image.attached? %>
+  <p><%= image_tag @post_detail.image %></p>
+<% end %>
 
 <p>都道府県</p>
 <p><%= @post_detail.prefectues %></p>
