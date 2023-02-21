@@ -37,7 +37,7 @@ class Public::PostsController < ApplicationController
       @post_input.member_id = current_member.id
       @tag_ids = params[:post][:tag_ids]
      if @post_input.save
-       @post_input.seve(params[:post][:tag_ids])
+       @tag_ids.seve_tags(params[:post][:tag_ids])
        flash[:notice] =  "まだ投稿されていません。投稿内容を確認し、投稿ボタンをクリックしてください"
        redirect_to  confirm_path(@post_input.id,tag_ids: @tag_ids)
      else
@@ -53,9 +53,9 @@ class Public::PostsController < ApplicationController
       @tag_ids = params[:post][:tag_ids]
         if @post.update(posts_params)
          redirect_to  confirm_path(@post.id,tag_ids: @tag_ids)
-       else
-        render :new
-       end
+        else
+         render :new
+        end
     end
 
   end
@@ -81,5 +81,5 @@ end
 private
 
 def posts_params
-  params.require(:post).permit(:title,:prefectues,:area,:access,:nearby_information,:go_around,:impressions,:image,tags_ids: [] )
+  params.require(:post).permit(:title,:prefectues,:area,:access,:nearby_information,:go_around,:impressions,:image,:tag_ids,tags_ids: [] )
 end
