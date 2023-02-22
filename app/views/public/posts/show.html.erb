@@ -27,5 +27,7 @@
 <p><%= @post_detail.impressions %></p>
 
 <p>タグ</p>
-<p><%= @post_detail.tag_ids %></p>
+<% @post_detail.tags.each do |tag| %>
+<p><%= tag.name %></p>
+<% end %>
 
