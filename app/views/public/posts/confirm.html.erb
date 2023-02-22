@@ -39,6 +39,7 @@
         <%= tag.check_box(disabled: true) %> <%= tag.text %></p>
      <% end %>
   <p><%= f.submit '投稿する' %></p>
+  <%= f.hidden_field :tags, value: @tag_ids.join(' ') %>
 <% end %>
 
 <%= link_to '戻る' ,new_post_path(id: @post_input.id) %>
