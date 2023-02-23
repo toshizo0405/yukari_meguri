@@ -32,11 +32,7 @@ Rails.application.routes.draw do
     get 'posts/complete' => 'posts#complete'#投稿完了画面
     post 'posts/unsubscribe' => 'posts#unsubscribe'#投稿内容の保存
     get 'posts/:id/confirm' => 'posts#confirm',as: :confirm#投稿確認画面
-    resources :posts,only:[:index,:show,:new,:create]
-    get 'posts/submission/edit' => 'posts#edit'#投稿内容編集画面
-    patch 'posts/submission' => 'posts#update'#投稿内容の更新
-    delete 'posts/submission' => 'posts#destroy'#投稿削除処理
-
+    resources :posts
     post 'posts/complete' => 'posts#complete'#投稿完了画面
 
   end

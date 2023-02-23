@@ -5,7 +5,7 @@ class Member < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :posts,dependent: :destroy
-
+  
 
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |member|
