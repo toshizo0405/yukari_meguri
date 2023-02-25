@@ -15,11 +15,10 @@ class Public::PostsController < ApplicationController
   end
 
   def update
-    @post_detail = current_member
-    @post_tag = params[:post][:tag_ids].split(/[[:blank:]]+/).select(&:present?)
+    @post_detail = current_member.posts.find(params[:id])
     if @post_detail.update(posts_params)
-      @post_detail.save_tags(params[:post][:tags])
-      redirect_to post_path(post.id)
+      @post_detail.save_tags(params[:post][:tag_ids])
+      redirect_to post_path(@post_detail)
     else
       render :edit
     end
