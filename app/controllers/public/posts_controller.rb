@@ -26,6 +26,9 @@ class Public::PostsController < ApplicationController
   end
 
   def destroy
+    @post_detail = current_member.posts.find(params[:id])
+    @post_detail.destroy
+    redirect_to posts_path
 
   end
 
