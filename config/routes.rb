@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
   scope module: :public do
     root 'homes#top'#トップ画面
+    get 'about' => 'homes#about'
 
     get 'members/unsubscribe' => 'members#unsubscribe'#退会確認画面
     patch 'members/withdraw' => 'members#withdraw' #退会処理
