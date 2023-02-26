@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+
+
   #管理側
   devise_for :managers,skip:[:registrations,:passwords],controllers: {
     sessions: "admin/sessions"
@@ -33,9 +35,10 @@ Rails.application.routes.draw do
     get 'posts/complete' => 'posts#complete'#投稿完了画面
     post 'posts/unsubscribe' => 'posts#unsubscribe'#投稿内容の保存
     get 'posts/:id/confirm' => 'posts#confirm',as: :confirm#投稿確認画面
-
-    resources :posts
+    resources :posts 
     post 'posts/complete' => 'posts#complete'#投稿完了画面
+    
+    resources :search,only:[:index]
 
   end
 
