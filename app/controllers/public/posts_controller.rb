@@ -8,11 +8,11 @@ class Public::PostsController < ApplicationController
     #@search = Post.ransack(title_matches: params[:q]["tag"])
     @search = Post.ransack(params[:q])
     if params[:q]
-      @posts = @search.result(distinct: true).joins(:tags).where("title LIKE ? OR tags.name LIKE ?","%#{params[:q][:title]}%", "%#{params[:q][:tag]}%").page(params[:page])
+      @posts = @search.result(distinct: true).page(params[:page])
     else
       @posts = @search.result.page(params[:page])
     end
-    # 検索結果
+
   end
 
   def show
