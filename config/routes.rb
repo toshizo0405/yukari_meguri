@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     root to: "homes#top"
   end
 
+
+
   #会員側
   devise_for :members,skip:[:passwords], path: :public, controllers: {
     registrations: "public/registrations",

@@ -9,12 +9,12 @@ class Public::SessionsController < Devise::SessionsController
 
   protected
 
-  def after_sign_in(resource)
+  def after_sign_in_for(resource)
     root_path
   end
 
   def after_sign_out_path_for(resource)
-    root_path
+    new_member_session_path
   end
 
   def regect_member
