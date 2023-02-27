@@ -3,16 +3,16 @@ Rails.application.routes.draw do
 
 
   #管理側
-  devise_for :managers,skip:[:registrations,:passwords],controllers: {
+  devise_for :managers,skip:[:registrations,:passwords], path: :admin, controllers: {
     sessions: "admin/sessions"
   }
 
   namespace :admin do
-
+    root to: "homes#top"
   end
 
   #会員側
-  devise_for :members,skip:[:passwords],controllers: {
+  devise_for :members,skip:[:passwords], path: :public, controllers: {
     registrations: "public/registrations",
     sessions: 'public/sessions'
   }
