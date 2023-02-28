@@ -1,6 +1,6 @@
 <%= link_to 'ログアウト', destroy_manager_session_path, method: :delete %>
 
-<h1>top投稿一覧(全<%= Post.count %>件）</h1>
+<h1>管理側の投稿一覧(全<%= Post.count %>件）</h1>
 
 <table border="1" >
   <thead>
@@ -13,7 +13,7 @@
   <tbody>
     <tr>
       <td><%= input.created_at.strftime('%Y/%m/%d') %></td>
-      <td><%= link_to input.title,post_path(input.id) %></td>
+      <td><%= link_to input.title,admin_post_path(input.id) %></td>
     </tr>
   </tbody>
   <% end %>
