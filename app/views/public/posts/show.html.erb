@@ -3,6 +3,9 @@
 <p>タイトル</p>
 <p><%= @post_detail.title %></p>
 
+<p>投稿者</p>
+<p><%= @post_detail.member.last_name %> <%= @post_detail.member.first_name %></p>
+
 <p>画像</p>
 <% if @post_detail.image.attached? %>
   <p><%= image_tag @post_detail.image %></p>
