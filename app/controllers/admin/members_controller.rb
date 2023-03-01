@@ -1,6 +1,7 @@
 class Admin::MembersController < ApplicationController
 
   def index
+    # byebug
     @members = Member.all
   end
 
