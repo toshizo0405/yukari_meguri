@@ -1,6 +1,5 @@
 <h2>会員詳細画面</h2>
 
-
 <div class="col-md-8 offset-md-1">
   <div class="row">
 <table class="table">
@@ -25,11 +24,13 @@
     </tbody>
   </table>
     <div class="col-md-4" >
- 　  <%= link_to '編集する', edit_admin_member_path(@member.id), class:"btn btn-success" %>
+ 　     <%= link_to 'ステータスの変更', edit_admin_member_path(@member.id), class:"btn btn-success" %>
     </div>
-
     <div class="col-md-6">
-    <%= link_to '投稿一覧画面に戻る', admin_members_path, class:"btn btn-success" %>
+        <%= link_to '投稿一覧画面に戻る', admin_members_path, class:"btn btn-success" %>
+    </div>
+    <div class="col-md-6">
+        <%#= link_to '会員投稿履歴に戻る', admin_members_path, class:"btn btn-success" %>
     </div>
   </div>
 </div>
