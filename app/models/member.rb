@@ -5,7 +5,7 @@ class Member < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :posts,dependent: :destroy
-  
+
 
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |member|
@@ -15,6 +15,10 @@ class Member < ApplicationRecord
 
   def active_for_authentication?
     super && (withdrawal == false)
+  end
+
+  def full_name
+    "#{last_name} #{first_name}"
   end
 
 

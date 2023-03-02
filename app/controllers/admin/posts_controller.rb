@@ -1,7 +1,10 @@
 class Admin::PostsController < ApplicationController
 
   def index
-    
+    # @post_Individual = Post.find(params[:id])
+    # @post_detail = Post.page(params[:page])
+    @member = Member.find(params[:member_id])
+    @post_Individual = Post.where(member_id: params[:member_id]).page(params[:page])
   end
 
   def show
