@@ -3,6 +3,11 @@ class Post < ApplicationRecord
   belongs_to :member
   has_many:tag_middles
   has_many:tags,through: :tag_middles, dependent: :destroy
+  has_many:bookmarks,dependent: :destroy
+  
+  def favorited_by?(member)
+       bookmarks.where(member_id: member.id).exists?
+  end
 
 
 
