@@ -4,7 +4,7 @@
 <div class="col-md-10 offset-md-1">
   <div class="row">
 
-<%= form_with model: @member, url: admin_member_path(@member.id), method: :get do |f| %>
+<%= form_with model: @member, url: admin_member_path(@member.id), method: :patch do |f| %>
   <table class="table">
       <thead>
         <tr><b><%= @member.last_name %> <%= @member.first_name %>さんの会員情報 </b></tr>
