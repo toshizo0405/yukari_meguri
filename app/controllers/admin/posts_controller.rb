@@ -9,6 +9,7 @@ class Admin::PostsController < ApplicationController
 
   def show
     @post_detail = Post.find(params[:id])
+    
   end
 
   def destroy
