@@ -41,7 +41,8 @@ ActiveRecord::Schema.define(version: 2023_02_19_091846) do
   end
 
   create_table "bookmarks", force: :cascade do |t|
-    t.integer "numeral"
+    t.integer "member_id"
+    t.integer "post_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

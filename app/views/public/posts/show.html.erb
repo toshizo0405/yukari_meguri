@@ -34,7 +34,22 @@
 <p><%= tag.name %></p>
 <% end %>
 
-<p>いいね ♡</p>
+<% if @post_detail.favorited_by?(current_member) %>
+  <p>
+    <%= link_to post_bookmarks_path(@post_detail), method: :delete do %>
+    ♥<%= @post_detail.bookmarks.count %>いいね
+   <% end %>
+  </p>
+<% else %>
+  <p>
+    <%= link_to post_bookmarks_path(@post_detail), method: :post do %>
+    ♥<%= @post_detail.bookmarks.count %>いいね
+   <% end %>
+  </p>
+ <% end %>
+
+
+
 
 <%= link_to '編集',edit_post_path(@post_detail) %>
 
