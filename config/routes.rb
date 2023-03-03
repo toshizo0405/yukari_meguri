@@ -40,10 +40,10 @@ Rails.application.routes.draw do
     post 'posts/unsubscribe' => 'posts#unsubscribe'#投稿内容の保存
     get 'posts/:id/confirm' => 'posts#confirm',as: :confirm#投稿確認画面
     resources :posts do
-      resource :bookmarks,only: [:index,:create,:destroy]
+      resource :bookmarks,only: [:create,:destroy]
     end
     post 'posts/complete' => 'posts#complete'#投稿完了画面
-    
+
 
 
 
