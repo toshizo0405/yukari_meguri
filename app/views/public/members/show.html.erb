@@ -18,7 +18,7 @@
     </tr>
 </table>
 
-<%= button_to "投稿履歴一覧へ",{controller: 'members', action: 'index'}, {method: :get} %>
-<%= link_to "いいねした投稿",bookmarks_member_path(current_member.id) %>
+<%= link_to "投稿履歴へ",members_path %>
+<%= link_to "いいねした投稿一覧へ",bookmarks_member_path(current_member.id) %>
 
 
