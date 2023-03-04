@@ -4,6 +4,7 @@ class Post < ApplicationRecord
   has_many:tag_middles
   has_many:tags,through: :tag_middles, dependent: :destroy
   has_many:bookmarks,dependent: :destroy
+  has_many:comments,dependent: :destroy
 
   def favorited_by?(member)
        bookmarks.exists?(member_id: member.id)

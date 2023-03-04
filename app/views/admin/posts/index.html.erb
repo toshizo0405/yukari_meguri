@@ -7,6 +7,7 @@
     <tr>
       <th>投稿日</th>
       <th>投稿タイトル</th>
+      <th>コメント数</th>
     </tr>
   </thead>
 
@@ -15,6 +16,7 @@
     <tr>
       <td><%= post.created_at.in_time_zone('Tokyo').strftime('%Y-%m-%d %H:%M:%S') %></td>
       <td><%= link_to post.title, admin_post_path(post) %></td>
+      <td><%= link_to "#{post.comments.count} コメント", post_path(post.id) %></td>
     </tr>
     <% end %>
   </tbody>
