@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: "homes#top"
     resources :posts,only:[:index,:show,:destroy]
+
     resources :members,only:[:index,:show,:edit,:update]
+
   end
 
 
@@ -46,6 +48,7 @@ Rails.application.routes.draw do
     get 'posts/:id/confirm' => 'posts#confirm',as: :confirm#投稿確認画面
     resources :posts do
       resource :bookmarks,only: [:create,:destroy]
+      resources:comments,only: [:create,:destroy]
     end
     post 'posts/complete' => 'posts#complete'#投稿完了画面
 

@@ -6,6 +6,7 @@ class Member < ApplicationRecord
 
   has_many :posts,dependent: :destroy
   has_many :bookmarks,dependent: :destroy
+  has_many :comments,dependent: :destroy
 
 
   def self.guest
