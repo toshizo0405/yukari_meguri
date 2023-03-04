@@ -31,8 +31,8 @@
 <p><%= tag.name %></p>
 <% end %>
 
-<p>いいね</p>
-<p><%= Bookmark.count %></p>
+<p>いいね件数</p>
+<p><%= @bookmark_count %></p>
 
 
 <%= link_to '削除する',admin_post_path(@post_detail),method: :delete %>
