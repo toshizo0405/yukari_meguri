@@ -9,7 +9,7 @@ class Admin::PostsController < ApplicationController
 
   def show
     @post_detail = Post.find(params[:id])
-    
+    @bookmark_count = Bookmark.where(post_id: @post_detail.id).count
   end
 
   def destroy
