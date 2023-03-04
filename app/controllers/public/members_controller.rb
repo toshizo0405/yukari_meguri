@@ -26,6 +26,12 @@ class Public::MembersController < ApplicationController
     @member = current_member
   end
 
+  def bookmarks
+    bookmarks = Bookmark.where(member_id: current_member.id).pluck(:post_id)
+    @bookmark_posts = Post.find(bookmarks)
+    @bookmark=Post.page(params[:page])
+  end
+
   def index
 
   end

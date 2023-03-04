@@ -1,0 +1,20 @@
+<p>いいねをした投稿一覧</p>
+
+<table border="1" >
+  <thead>
+    <tr>
+      <th>投稿日</th>
+      <th>投稿タイトル</th>
+    </tr>
+  </thead>
+  <% @bookmark_posts.each do |bookmark| %>
+  <tbody>
+    <tr>
+      <td><%= bookmark.member.full_name %></td>
+      <td><%= bookmark.created_at.strftime('%Y/%m/%d') %></td>
+      <td><%= link_to bookmark.title, post_path(bookmark.id) %></td>
+    </tr>
+  </tbody>
+  <% end %>
+</table>
+<%= paginate @bookmark %>
