@@ -26,6 +26,7 @@
        </tr>
      </thead>
     </table>
+    <br>
     <div class="row justify-content-center">
      <%= member.submit '変更内容を保存',class: "btn btn-success" %>
      <%= link_to "退会する", members_unsubscribe_path, method: :get, data: { confilm: "本当に退会しますか？" } %>
