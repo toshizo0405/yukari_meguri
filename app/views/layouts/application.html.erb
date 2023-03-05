@@ -12,10 +12,9 @@
 
   <body>
     <header>
-      <nav class="navbar navbar-light" style="background-color: #00a3af">
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffffff">
         <div class="container">
-          <a class="naver-brand p-3" href="/"></a>
-
+          <a class="naver-brand p-4" href="/"></a>
           <bouttn class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </bouttn>
@@ -23,17 +22,17 @@
             <ul class="navbar-nav ml-auto">
               <% if member_signed_in? %>
                 <li>
-                  <%= link_to members_my_page_path, class:'nav-link text-light' do %>
+                  <%= link_to members_my_page_path, class:'nav-link text-dark' do %>
                   <i class="fas fa-users"></i>マイページ
                   <% end %>
                 </li>
                 <li>
-                  <%= link_to posts_path, class:'nav-link text-light' do %>
+                  <%= link_to posts_path, class:'nav-link text-dark' do %>
                   <i class="fas fa-list"></i>投稿一覧
                   <% end %>
                 </li>
                 <li>
-                  <%= link_to destroy_member_session_path, method: :delete,class:'nav-link text-light' do %>
+                  <%= link_to destroy_member_session_path, method: :delete,class:'nav-link text-dark' do %>
                   <i class="fas fa-door-open"></i>ログアウト
                   <% end %>
                 </li>
