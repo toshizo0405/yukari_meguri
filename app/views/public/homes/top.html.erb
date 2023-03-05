@@ -1,33 +1,40 @@
 <div class ="container">
  <div class ="row">
+  <div class ="col-12">
+   <%= link_to 'ゲストログイン', members_guest_sign_in_path, method: :post %>
+  </div>
 
-  <div class = "col-12" >
-    <%= image_tag 'otera_1.jpg', size: '900x500' %>
-  </div>
-  <div class = "top_mesg" >
-   ようこそ！ゆかり巡りへ！<br>
-   <br>
-   このサイトは、歴史好きの人のためのコミュニティサイトです!
-  </div>
  </div>
 
-<h2>新着投稿</h2>
-<div class="row">
- <div class="col-md-12">
-  <ul class ="list-inline">
-   <% @posts.first(10).each do |post| %>
-     <li class="list-inline-item">
-      <%= post.created_at.strftime('%Y/%m/%d') %><br>
-      <%= link_to post.title,post_path(post.id) %><br>
-     </li>
-    <% end %>
-  </ul>
+  <div class ="row">
+
+   <div class = "col-12" >
+     <%= image_tag 'otera_1.jpg', size: '900x500' %>
+   </div>
+   <div class = "top_mesg" >
+    ようこそ！ゆかり巡りへ！<br>
+    <br>
+    このサイトは、歴史好きの人のためのコミュニティサイトです!
+   </div>
+  </div>
+
+ <h2>新着投稿</h2>
+ <div class="row">
+  <div class="col-md-12">
+   <ul class ="list-inline">
+    <% @posts.first(10).each do |post| %>
+      <li class="list-inline-item">
+       <%= post.created_at.strftime('%Y/%m/%d') %><br>
+       <%= link_to post.title,post_path(post.id) %><br>
+      </li>
+     <% end %>
+   </ul>
+  </div>
  </div>
-</div>
 
 
 <%#= link_to "退会する", members_withdraw_path, method: :patch, data: { confilm: "本当に退会しますか？" } %>
 
-<%= link_to 'ゲストログイン（閲覧用）', members_guest_sign_in_path, method: :post %>
+<%#= link_to 'ゲストログイン（閲覧用）', members_guest_sign_in_path, method: :post %>
 
 </div>
