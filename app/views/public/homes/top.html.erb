@@ -1,5 +1,14 @@
+<div class ="container">
+ <div class ="row">
+
+  <%= image_tag 'otera_1.jpg', size: '900x500' %>
+
+ </div>
+
 <h1>topページ</h1>
 
 <%= link_to "退会する", members_withdraw_path, method: :patch, data: { confilm: "本当に退会しますか？" } %>
 
 <%= link_to 'ゲストログイン（閲覧用）', members_guest_sign_in_path, method: :post %>
+
+</div>
