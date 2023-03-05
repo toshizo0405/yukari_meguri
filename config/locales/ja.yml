@@ -3,13 +3,12 @@ ja:
   activerecord:
     attributes:
       member:
+        encrypted_password: パスワード
         last_name: 名前(性)
         last_name_kana: フリガナ(セイ)
         first_name: 名
         first_name_kana: メイ
         email: メールアドレス
-        encrypted_password: パスワード
-        reset_password_token: パスワード(確認)
     models:
       member: 会員
     errors:
