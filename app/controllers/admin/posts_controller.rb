@@ -1,5 +1,7 @@
 class Admin::PostsController < ApplicationController
 
+before_action :authenticate_manager!
+
   def index
     # @post_Individual = Post.find(params[:id])
     # @post_detail = Post.page(params[:page])
