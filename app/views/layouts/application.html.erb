@@ -37,40 +37,40 @@
                   <% end %>
                 </li>
                 <li>
-                  <%= link_to about_path, class:'nav-link text-light' do %>
+                  <%= link_to about_path, class:'nav-link text-dark' do %>
                   <i class="fas fa-home"></i>about
                   <% end %>
                 </li>
 
               <% elsif manager_signed_in? %>
                   <li>
-                  <%= link_to admin_members_path, class:'nav-link text-light' do %>
+                  <%= link_to admin_members_path, class:'nav-link text-dark' do %>
                   <i class="fas fa-home"></i>会員一覧
                   <% end %>
                 </li>
                 <li>
-                  <%= link_to admin_root_path, class:'nav-link text-light' do %>
+                  <%= link_to admin_root_path, class:'nav-link text-dark'  do %>
                   <i class="fas fa-home"></i>投稿履歴一覧
                   <% end %>
                 </li>
                 <li>
-                  <%= link_to destroy_manager_session_path, method: :delete,class:'nav-link text-light' do %>
+                  <%= link_to destroy_manager_session_path, method: :delete,class:'nav-link text-dark' do %>
                   <i class="fas fa-home"></i>ログアウト
                   <% end %>
                 </li>
               <% else %>
                 <li>
-                  <%= link_to new_member_registration_path, class:'nav-link text-light' do %>
+                  <%= link_to new_member_registration_path, class:'nav-link text-dark' do %>
                   <i class="fas fa-home"></i>新規登録
                   <% end %>
                 </li>
                 <li>
-                  <%= link_to new_member_session_path, class:'nav-link text-light' do %>
+                  <%= link_to new_member_session_path, class:'nav-link text-dark' do %>
                   <i class="fas fa-home"></i>ログイン
                   <% end %>
                 </li>
                 <li>
-                  <%= link_to about_path, class:'nav-link text-light' do %>
+                  <%= link_to about_path, class:'nav-link text-dark' do %>
                   <i class="fas fa-home"></i>about
                   <% end %>
                 </li>

@@ -1,5 +1,7 @@
 class Public::PostsController < ApplicationController
 
+  before_action :authenticate_member!,except:[:top,:about]
+
   def index
     @posts=Post.page(params[:page])
     # 検索オブジェクト

@@ -1,5 +1,7 @@
 class Public::MembersController < ApplicationController
 
+  before_action :authenticate_member!,except:[:top,:about]
+
   def show
     @member = current_member
     @posts = @member.posts.page(params[:page])
