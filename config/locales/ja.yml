@@ -3,7 +3,7 @@ ja:
   activerecord:
     attributes:
       member:
-        encrypted_password: パスワード
+        encrypted_password: パスワード(確認用)
         last_name: 名前(性)
         last_name_kana: フリガナ(セイ)
         first_name: 名
