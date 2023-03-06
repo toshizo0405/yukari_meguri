@@ -8,13 +8,16 @@ class Public::MembersController < ApplicationController
   end
 
   def edit
-    @member_edit = current_member
+    @member = current_member
   end
 
   def update
     @member =current_member
-    @member.update(member_params)
+    if @member.update(member_params)
     redirect_to members_my_page_path
+    else
+    render :edit
+    end
   end
 
   def withdraw
