@@ -1,7 +1,32 @@
-<h2>退会お手続き</h2>
- <p>
-   本当に退会しますか？
-   ご自身の登録情報やこれまでの投稿履歴が閲覧できなくなりますが、退会しますか？
- </p>
-  <%= link_to "退会しない",members_my_page_path %>
-  <%= link_to "退会する", members_withdraw_path, method: :patch, data: { confilm: "本当に退会しますか？" } %>
+<div class ="container">
+ <div class="row">
+  <div class="col-3">
+  </div>
+  <div class="col-4">
+   <h2>本当に退会しますか？</h2>
+  </div>
+  <div class="col-4">
+  </div>
+ </div>
+ <br>
+ <div class="row">
+  <div class="col-3">
+  </div>
+  <div class="col-6">
+   <h3> ご自身の登録情報やこれまでの</h3>
+   <h3>投稿履歴が閲覧できなくなりますが、</h3>
+   <h3>よろしいでしょうか？</h3>
+  </div>
+ </div>
+ <br>
+ <div class="row">
+  <div class="col-3">
+  </div>
+  <div class="col-4">
+    <%= link_to "退会しない",members_my_page_path %>
+  </div>
+  <div class="col-4">
+    <%= link_to "退会する", members_withdraw_path, method: :patch,style: "color: red;" %>
+  </div>
+ </div>
+</div>
