@@ -1,6 +1,9 @@
 ---
 ja:
   activerecord:
+    models:
+      member: 会員
+      post: 投稿
     attributes:
       member:
         encrypted_password: パスワード(確認用)
@@ -9,8 +12,14 @@ ja:
         first_name: 名
         first_name_kana: メイ
         email: メールアドレス
-    models:
-      member: 会員
+      post:
+        title: タイトル
+        prefectues: 都道府県
+        area: 住所
+        access: アクセス
+        nearby_information: 周辺情報
+        go_around: 巡り方
+        impressions: 感想
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
