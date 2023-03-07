@@ -11,7 +11,6 @@
 
 
 
-
 table{
   width: 100%;
   border-collapse:separate;
@@ -74,4 +73,11 @@ td{
   top:35%;
   left:30%;
   color:#ffffff;
+}
+
+.background{
+  background-image: url("/images/pf_back2.jpg");
+  background-position:bottom;
+  height: 800px;
+  background-size:cover;
 }
