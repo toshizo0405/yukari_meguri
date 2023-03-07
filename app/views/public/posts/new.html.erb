@@ -1,15 +1,6 @@
-<% if @post_input.errors.any? %>
-  <%= @post_input.errors.count %>件のエラーが発生しました
-  <ul>
-    <% @post_input.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
-
 
 <h2>投稿入力フォーム</h2>
-
+<%= render 'layouts/error_messages', model: @post_input %>
 <%= form_with model: @post_input,url: "/posts/unsubscribe", method: :post do |f| %>
     <%= f.label :"タイトル" %> <%= f.text_field :title %>
     <%= f.label :"画像" %> <%= f.file_field :image, placeholder: "選択されていません", accept: "image/*" %>
