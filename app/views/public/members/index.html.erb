@@ -21,7 +21,7 @@
           <tr>
             <td><%= post.created_at.in_time_zone('Tokyo').strftime('%Y-%m-%d %H:%M:%S') %></td>
             <td><%= link_to post.title, post_path(post) %></td>
-            <td><%= link_to "#{post.comments.count} コメント", post_path(post.id) %></td>
+            <td><%=  "#{post.comments.count} コメント"%></td>
           </tr>
           <% end %>
         </tbody>
