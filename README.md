@@ -39,3 +39,7 @@
 
 ## 使用素材
 - designevo　URL https://www.designevo.com/
+- イラストAC URL https://www.ac-illust.com/
+- designevo  URL https://www.designevo.com/
+- Google Fonts URL https://fonts.google.com/
+- ぱくたそ URL https://www.pakutaso.com/
