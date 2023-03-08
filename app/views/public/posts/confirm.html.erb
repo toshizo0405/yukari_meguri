@@ -1,5 +1,6 @@
 <h2>投稿確認</h2>
-<%= flash[:notice] %>
+
+<h4>まだ投稿されていません。投稿内容を確認し、投稿ボタンをクリックしてください</h4>
 
 <%= form_with model: @post_input, url: posts_path(id: params[:id]),multipart: true,method: :post do |f| %>
   <p><%= f.label "タイトル" %></p>
