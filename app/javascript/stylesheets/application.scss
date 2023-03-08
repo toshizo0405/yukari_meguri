@@ -76,7 +76,28 @@ td{
   color:#ffffff;
 }
 
-.background{
+.background_form{
+  background-image: url("/images/pf_back2.jpg");
+  background-position:bottom;
+  height: 2000px;
+  background-size:cover;
+}
+
+.background_top{
+  background-image: url("/images/pf_back2.jpg");
+  background-position:bottom;
+  height: 800px;
+  background-size:cover;
+}
+
+.background_my{
+  background-image: url("/images/pf_back2.jpg");
+  background-position:bottom;
+  height: 800px;
+  background-size:cover;
+}
+
+.background_edit{
   background-image: url("/images/pf_back2.jpg");
   background-position:bottom;
   height: 800px;
