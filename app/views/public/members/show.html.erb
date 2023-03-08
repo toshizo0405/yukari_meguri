@@ -1,46 +1,48 @@
-<div class ="container">
-<br>
- <div class ="row">
-  <div class ="col-4"></div>
-  <div class ="col-4">
-   <h2><b>マイページ</b></h2>
-  </div>
- </div>
- <div class ="row">
-  <div class ="col-12">
-   <%= button_to "編集する",{controller: 'members', action: 'edit'}, {method: :get} %>
-  </div>
- </div>
- <div class= "row">
-  <br>
- </div>
- <div class="row">
-   <table border="1">
-    <thead>
-       <tr>
-        <td class="table-success">氏名</td>
-        <td class="table-success"><%= @member.last_name %> <%= @member.first_name %></td>
-       </tr>
-       <tr>
-        <td class="table-success">フリガナ</td>
-        <td class="table-success"><%= @member.last_name_kana %> <%= @member.first_name_kana %></td>
-       </tr>
-       <tr>
-        <td class="table-success">メールアドレス</td>
-        <td class="table-success"><%= @member.email %></td>
-       </tr>
-    </thead>
-   </table>
- </div>
+<div class="background_my">
+ <div class ="container">
  <br>
- <div class ="row">
-  <div class ="col-2">
+  <div class ="row">
+   <div class ="col-4"></div>
+   <div class ="col-4">
+    <h2><b>マイページ</b></h2>
+   </div>
   </div>
-  <div class ="col-4">
-   <%= link_to "投稿履歴へ",members_path %>
+  <div class ="row">
+   <div class ="col-12">
+    <%= button_to "編集する",{controller: 'members', action: 'edit'}, {method: :get} %>
+   </div>
   </div>
-  <div class ="col-4">
-   <%= link_to "いいねした投稿一覧へ",bookmarks_member_path(current_member.id) %>
+  <div class= "row">
+   <br>
+  </div>
+  <div class="row">
+    <table border="1">
+     <thead>
+        <tr>
+         <td class="table-success">氏名</td>
+         <td class="table-success"><%= @member.last_name %> <%= @member.first_name %></td>
+        </tr>
+        <tr>
+         <td class="table-success">フリガナ</td>
+         <td class="table-success"><%= @member.last_name_kana %> <%= @member.first_name_kana %></td>
+        </tr>
+        <tr>
+         <td class="table-success">メールアドレス</td>
+         <td class="table-success"><%= @member.email %></td>
+        </tr>
+     </thead>
+    </table>
+  </div>
+  <br>
+  <div class ="row">
+   <div class ="col-2">
+   </div>
+   <div class ="col-4">
+    <%= link_to "投稿履歴へ",members_path %>
+   </div>
+   <div class ="col-4">
+    <%= link_to "いいねした投稿一覧へ",bookmarks_member_path(current_member.id) %>
+   </div>
   </div>
  </div>
 </div>
