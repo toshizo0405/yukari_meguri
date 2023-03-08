@@ -1,32 +1,35 @@
-<div class ="container">
- <div class="row">
-  <div class="col-3">
+<div class="background_unsubscribe" >
+ <div class ="container">
+  <br>
+  <div class="row">
+   <div class="col-3">
+   </div>
+   <div class="col-4">
+    <h3>本当に退会しますか？</h3>
+   </div>
+   <div class="col-4">
+   </div>
   </div>
-  <div class="col-4">
-   <h2>本当に退会しますか？</h2>
+  <br>
+  <div class="row">
+   <div class="col-3">
+   </div>
+   <div class="col-6">
+    <h4> ご自身の登録情報やこれまでの</h4>
+    <h4>投稿履歴が閲覧できなくなりますが、</h4>
+    <h4>よろしいでしょうか？</h4>
+   </div>
   </div>
-  <div class="col-4">
-  </div>
- </div>
- <br>
- <div class="row">
-  <div class="col-3">
-  </div>
-  <div class="col-6">
-   <h3> ご自身の登録情報やこれまでの</h3>
-   <h3>投稿履歴が閲覧できなくなりますが、</h3>
-   <h3>よろしいでしょうか？</h3>
-  </div>
- </div>
- <br>
- <div class="row">
-  <div class="col-3">
-  </div>
-  <div class="col-4">
-    <%= link_to "退会しない",members_my_page_path %>
-  </div>
-  <div class="col-4">
-    <%= link_to "退会する", members_withdraw_path, method: :patch,style: "color: red;" %>
+  <br>
+  <div class="row">
+   <div class="col-3">
+   </div>
+   <div class="col-4">
+     <%= link_to "退会しない",members_my_page_path %>
+   </div>
+   <div class="col-4">
+     <%= link_to "退会する", members_withdraw_path, method: :patch,style: "color: red;" %>
+   </div>
   </div>
  </div>
 </div>
