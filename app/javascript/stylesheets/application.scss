@@ -69,6 +69,14 @@ h3{
   font-weight: bold;
 }
 
+h5{
+  color:red;
+  font-weight: bold;
+}
+
+h6{
+  font-weight: bold;
+}
 
 td{
   font-weight: bold;
@@ -116,6 +124,19 @@ td{
   background-size:cover;
 }
 
+.background_confirm{
+  background-image: url("/images/pf_back2.jpg");
+  background-position:bottom;
+  height: 800px;
+  background-size:cover;
+}
+
+.background_complete{
+  background-image: url("/images/pf_back2.jpg");
+  background-position:bottom;
+  height: 800px;
+  background-size:cover;
+}
 
 .nav-link{
   font-weight: bold;
