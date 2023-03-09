@@ -9,74 +9,74 @@
        </div>
       </div>
 
-<p>タイトル</p>
-<p><%= @post_detail.title %></p>
-
-<p>投稿者</p>
-<p><%= @post_detail.member.last_name %> <%= @post_detail.member.first_name %></p>
-
-<p>画像</p>
-<% if @post_detail.image.attached? %>
-  <p><%= image_tag @post_detail.image %></p>
-<% end %>
-
-<p>都道府県</p>
-<p><%= @post_detail.prefectues %></p>
-
-<p>住所</p>
-<p><%= @post_detail.area %></p>
-
-<p>アクセス</p>
-<p><%= @post_detail.access %></p>
-
-<p>周辺情報</p>
-<p><%= @post_detail.nearby_information %></p>
-
-<p>巡り方</p>
-<p><%= @post_detail.go_around %></p>
-
-<p>感想</p>
-<p><%= @post_detail.impressions %></p>
-
-<p>タグ</p>
-<% @post_detail.tags.each do |tag| %>
-<p><%= tag.name %></p>
-<% end %>
-
-<% if @post_detail.favorited_by?(current_member) %>
-  <p>
-    <%= link_to post_bookmarks_path(@post_detail), method: :delete do %>
-    ♥<%= @post_detail.bookmarks.count %>いいね
-   <% end %>
-  </p>
-<% else %>
-  <p>
-    <%= link_to post_bookmarks_path(@post_detail), method: :post do %>
-    ♥<%= @post_detail.bookmarks.count %>いいね
-   <% end %>
-  </p>
- <% end %>
-
- いいね数<%= @post_detail.bookmarks.count %>
-
- <div>
-  <p>コメント件数：<%= @post_detail.comments.count %></p>
-  <% @post_detail.comments.each do |post_comment| %>
-    <%= post_comment.member.full_name %>
-    <%= post_comment.created_at.strftime('%Y/%m/%d') %><%= post_comment.comment %>
-    <% if post_comment.member == current_member %>
-      <%= link_to "削除", post_comment_path(post_comment.post, post_comment), method: :delete %>
+    <p>タイトル</p>
+    <p><%= @post_detail.title %></p>
+    
+    <p>投稿者</p>
+    <p><%= @post_detail.member.last_name %> <%= @post_detail.member.first_name %></p>
+    
+    <p>画像</p>
+    <% if @post_detail.image.attached? %>
+      <p><%= image_tag @post_detail.image %></p>
     <% end %>
-  <% end %>
-</div>
-<div>
-  <%= form_with model: [@post_detail, @post_comment] do |f| %>
-    <%= f.text_area :comment, rows: '5', placeholder: "コメントをここに" %>
-    <%= f.submit "コメントする" %>
-  <% end %>
-</div>
-
-
-<%= link_to '編集',edit_post_path(@post_detail) %>
-
-<%= link_to '投稿一覧に戻る',posts_path %>
+    
+    <p>都道府県</p>
+    <p><%= @post_detail.prefectues %></p>
+    
+    <p>住所</p>
+    <p><%= @post_detail.area %></p>
+    
+    <p>アクセス</p>
+    <p><%= @post_detail.access %></p>
+    
+    <p>周辺情報</p>
+    <p><%= @post_detail.nearby_information %></p>
+    
+    <p>巡り方</p>
+    <p><%= @post_detail.go_around %></p>
+    
+    <p>感想</p>
+    <p><%= @post_detail.impressions %></p>
+    
+    <p>タグ</p>
+    <% @post_detail.tags.each do |tag| %>
+    <p><%= tag.name %></p>
+    <% end %>
+    
+    <% if @post_detail.favorited_by?(current_member) %>
+      <p>
+        <%= link_to post_bookmarks_path(@post_detail), method: :delete do %>
+        ♥<%= @post_detail.bookmarks.count %>いいね
+       <% end %>
+      </p>
+    <% else %>
+      <p>
+        <%= link_to post_bookmarks_path(@post_detail), method: :post do %>
+        ♥<%= @post_detail.bookmarks.count %>いいね
+       <% end %>
+      </p>
+     <% end %>
+    
+     いいね数<%= @post_detail.bookmarks.count %>
+    
+     <div>
+      <p>コメント件数：<%= @post_detail.comments.count %></p>
+      <% @post_detail.comments.each do |post_comment| %>
+        <%= post_comment.member.full_name %>
+        <%= post_comment.created_at.strftime('%Y/%m/%d') %><%= post_comment.comment %>
+        <% if post_comment.member == current_member %>
+          <%= link_to "削除", post_comment_path(post_comment.post, post_comment), method: :delete %>
+        <% end %>
+      <% end %>
+    </div>
+    <div>
+      <%= form_with model: [@post_detail, @post_comment] do |f| %>
+        <%= f.text_area :comment, rows: '5', placeholder: "コメントをここに" %>
+        <%= f.submit "コメントする" %>
+      <% end %>
+    </div>
+    
+    
+    <%= link_to '編集',edit_post_path(@post_detail) %>
+    
+    <%= link_to '投稿一覧に戻る',posts_path %>
