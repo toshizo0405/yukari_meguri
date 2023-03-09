@@ -8,9 +8,9 @@
         <h2>投稿入力フォーム</h2>
        </div>
       </div>
-      
+
        <%= render 'layouts/error_messages', model: @post_input %>
-       
+
       <div class="row justify-content-center">
       　<div class="col-12">
       　  <%= form_with model: @post_input,url: "/posts/unsubscribe", method: :post do |f| %>
@@ -48,10 +48,11 @@
       　        </tr>
                 <tr>
       　          <td class="table-success">
-                   <%= f.label :"住所" %>
+                   <%= f.label :"住所" %><br>
+                   <%= f.label :"※スタート地点の" %><br>
       　          </td>
       　          <td class="table-success">
-                   <%= f.text_field :area ,size:"50" %>
+                   <%= f.text_area :area ,size:"60x3" %>
       　          </td>
       　        </tr>
       　        <tr>

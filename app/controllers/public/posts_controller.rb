@@ -85,6 +85,7 @@ class Public::PostsController < ApplicationController
   end
 
   def confirm
+    #byebug
      @post_input = Post.find(params[:id])
      @tag_ids = params[:tag_ids]
   end

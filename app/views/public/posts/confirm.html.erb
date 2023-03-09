@@ -24,7 +24,7 @@
           <%= f.hidden_field :title, value: @post_input.title %>
 
           <h6><%= f.label "画像:" %></h6>
-          <p><%= image_tag @post_input.image if @post_input.image.attached? %></p>
+          <%= image_tag @post_input.image.variant(resize: '500x500') if @post_input.image.attached? %>
           <%= f.hidden_field :image, value: @post_input.image %>
 
           <h6><%= f.label "都道府県:" %></h6>
