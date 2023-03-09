@@ -16,16 +16,23 @@
       <h5>まだ投稿されていません。<br>投稿内容を確認し、<br>投稿ボタンをクリックしてください</h5>
      </div>
     </div>
+    <br>
     <div class="row justify-content-center">
-     <div class="col-8">
+     <div class="col-3">
         <%= form_with model: @post_input, url: posts_path(id: params[:id]),multipart: true,method: :post do |f| %>
           <h6><%= f.label "タイトル:" %></h6>
           <p><%= @post_input.title %></p>
           <%= f.hidden_field :title, value: @post_input.title %>
 
           <h6><%= f.label "画像:" %></h6>
-          <%= image_tag @post_input.image.variant(resize: '500x500') if @post_input.image.attached? %>
-          <%= f.hidden_field :image, value: @post_input.image %>
+         <div class="row">
+          <div class="col-12">
+          </div>
+          <div class="col-4">
+           <p><%= image_tag @post_input.image.variant(resize: '400x400') if @post_input.image.attached? %></p>
+           <%= f.hidden_field :image, value: @post_input.image %>
+          </div>
+         </div>
 
           <h6><%= f.label "都道府県:" %></h6>
           <p><%= @post_input.prefectues %></p>
@@ -60,8 +67,11 @@
         <% end %>
       </div>
      </div>
-
-
-      <%= link_to '戻る' ,new_post_path(id: @post_input.id) %>
+     <div class="row justify-content-center">
+      <div class="col-1"></div>
+      <div class="col-4">
+       <%= link_to '前の画面に戻る' ,new_post_path(id: @post_input.id),style: "font-weight:bold;" %>
+      </div>
+     </div>
  </div>
 </div>
