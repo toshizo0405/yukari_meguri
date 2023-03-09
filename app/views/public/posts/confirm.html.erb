@@ -1,46 +1,67 @@
-<h2>投稿確認</h2>
+<div class="background_confirm">
+  <div class="container">
+    <br>
+    <div class="row">
+      <div class="col-5">
+      </div>
+      <div class="col-4">
+       <h2>投稿確認</h2>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+     <div class="col-4">
+     </div>
+     <div class="col-6">
+      <h5>まだ投稿されていません。<br>投稿内容を確認し、<br>投稿ボタンをクリックしてください</h5>
+     </div>
+    </div>
+    <div class="row justify-content-center">
+     <div class="col-8">
+        <%= form_with model: @post_input, url: posts_path(id: params[:id]),multipart: true,method: :post do |f| %>
+          <h6><%= f.label "タイトル:" %></h6>
+          <p><%= @post_input.title %></p>
+          <%= f.hidden_field :title, value: @post_input.title %>
 
-<h4>まだ投稿されていません。投稿内容を確認し、投稿ボタンをクリックしてください</h4>
+          <h6><%= f.label "画像:" %></h6>
+          <p><%= image_tag @post_input.image if @post_input.image.attached? %></p>
+          <%= f.hidden_field :image, value: @post_input.image %>
 
-<%= form_with model: @post_input, url: posts_path(id: params[:id]),multipart: true,method: :post do |f| %>
-  <p><%= f.label "タイトル" %></p>
-  <p><%= @post_input.title %></p>
-  <%= f.hidden_field :title, value: @post_input.title %>
+          <h6><%= f.label "都道府県:" %></h6>
+          <p><%= @post_input.prefectues %></p>
+          <%= f.hidden_field :prefectues, value: @post_input.prefectues %>
 
-  <p><%= f.label "画像" %></p>
-  <p><%= image_tag @post_input.image if @post_input.image.attached? %></p>
-  <%= f.hidden_field :image, value: @post_input.image %>
+          <h6><%= f.label "住所:" %></h6>
+          <p><%= @post_input.area %></p>
+          <%= f.hidden_field :area, value: @post_input.area %>
 
-  <p><%= f.label "都道府県" %></p>
-  <p><%= @post_input.prefectues %></p>
-  <%= f.hidden_field :prefectues, value: @post_input.prefectues %>
+          <h6><%= f.label "アクセス:" %></h6>
+          <p><%= @post_input.access %></p>
+          <%= f.hidden_field :access,value: @post_input.access %>
 
-  <p><%= f.label "住所" %></p>
-  <p><%= @post_input.area %></p>
-  <%= f.hidden_field :area, value: @post_input.area %>
+          <h6><%= f.label "周辺情報:" %></h6>
+          <p><%= @post_input.nearby_information %></p>
+          <%= f.hidden_field :nearby_information,value: @post_input.nearby_information %>
 
-  <p><%= f.label "アクセス" %></p>
-  <p><%= @post_input.access %></p>
-  <%= f.hidden_field :access,value: @post_input.access %>
+          <h6><%= f.label "巡り方:" %></h6>
+          <p><%= @post_input.go_around %></p>
+          <%= f.hidden_field :go_around,value:  @post_input.go_around %>
 
-  <p><%= f.label "周辺情報" %></p>
-  <p><%= @post_input.nearby_information %></p>
-  <%= f.hidden_field :nearby_information,value: @post_input.nearby_information %>
+          <h6><%= f.label "感想:" %></h6>
+          <p><%= @post_input.impressions %></p>
+          <%= f.hidden_field :impressions,value:  @post_input.impressions %>
 
-  <p><%= f.label "巡り方" %></p>
-  <p><%= @post_input.go_around %></p>
-  <%= f.hidden_field :go_around,value:  @post_input.go_around %>
+          <h6><%= f.label :"タグ登録:" %></h6>
+          <p><%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name, checked: @tag_ids) do |tag| %>
+                <%= tag.check_box(disabled: true) %> <%= tag.text %></p>
+             <% end %>
+          <p><%= f.submit '投稿する' %></p>
+          <%= f.hidden_field :tags, value: @tag_ids.join(' ') %>
+        <% end %>
+      </div>
+     </div>
 
-  <p><%= f.label "感想" %></p>
-  <p><%= @post_input.impressions %></p>
-  <%= f.hidden_field :impressions,value:  @post_input.impressions %>
 
-  <p><%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name, checked: @tag_ids) do |tag| %>
-        <%= f.label :"タグ登録" %>
-        <%= tag.check_box(disabled: true) %> <%= tag.text %></p>
-     <% end %>
-  <p><%= f.submit '投稿する' %></p>
-  <%= f.hidden_field :tags, value: @tag_ids.join(' ') %>
-<% end %>
-
-<%= link_to '戻る' ,new_post_path(id: @post_input.id) %>
+      <%= link_to '戻る' ,new_post_path(id: @post_input.id) %>
+ </div>
+</div>
