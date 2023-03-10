@@ -1,5 +1,11 @@
 <div class="background_form">
   <div class="container">
+    <br>
+    <div class="row">
+      <div class="col-5">
+        <%= link_to '投稿一覧に戻る',posts_path,style: "font-weight: bold" %>
+      </div>
+    </div>
       <br>
       <div class="row">
        <div class="col-5">
@@ -92,6 +98,13 @@
       </div>
      </div>
      <br>
+     <div class="row">
+       <div class="col-5"></div>
+       <div class="col-4">
+         <h4><%= link_to '投稿内容を編集する',edit_post_path(@post_detail),style: "font-weight: bold" %></h4>
+       </div>
+     </div>
+     <br>
              <p class="tag_design">
                タグ:
              </p>
@@ -100,40 +113,46 @@
               <%= tag.name %>
             </p>
             <% end %>
-      <% if @post_detail.favorited_by?(current_member) %>
-        <p>
-          <%= link_to post_bookmarks_path(@post_detail), method: :delete do %>
+            <br>
+     <% if @post_detail.favorited_by?(current_member) %>
+       <div class="row">
+        <h4>
+          <%= link_to post_bookmarks_path(@post_detail),style: "color: red;", method: :delete do %>
           ♥<%= @post_detail.bookmarks.count %>いいね
          <% end %>
-        </p>
+        </h4>
+      </div>
       <% else %>
-        <p>
+      <div class="row">
+        <h4>
           <%= link_to post_bookmarks_path(@post_detail), style: "color: red;",method: :post do %>
           ♥<%= @post_detail.bookmarks.count %>いいね
          <% end %>
-        </p>
-       <% end %>
+        </h4>
+      </div>
+      <% end %>
+      <div>
+        <p>コメント入力フォーム:</p>
+        <%= form_with model: [@post_detail, @post_comment] do |f| %>
+          <%= f.text_area :comment, size: "50x7", placeholder: "コメントをここに" %>
+          <%= f.submit "コメントする" %>
+        <% end %>
+       </div>
 
-       いいね数<%= @post_detail.bookmarks.count %>
-
-       <div>
-        <p>コメント件数：<%= @post_detail.comments.count %></p>
+         いいね数:<%= @post_detail.bookmarks.count %>
+          <p>コメント件数：<%= @post_detail.comments.count %></p>
         <% @post_detail.comments.each do |post_comment| %>
+        <p>
           <%= post_comment.member.full_name %>
-          <%= post_comment.created_at.strftime('%Y/%m/%d') %><%= post_comment.comment %>
+          <%= post_comment.created_at.strftime('%Y/%m/%d') %>
+          <p><%= safe_join(post_comment.comment.split("\n"),tag(:br)) %></p>
           <% if post_comment.member == current_member %>
-            <%= link_to "削除", post_comment_path(post_comment.post, post_comment), method: :delete %>
+            <%= link_to "削除", post_comment_path(post_comment.post, post_comment), method: :delete,style: "color: red;" %>
+        </p>
           <% end %>
         <% end %>
-    </div>
-    <div>
-      <%= form_with model: [@post_detail, @post_comment] do |f| %>
-        <%= f.text_area :comment, rows: '5', placeholder: "コメントをここに" %>
-        <%= f.submit "コメントする" %>
-      <% end %>
-    </div>
 
 
-    <%= link_to '編集',edit_post_path(@post_detail) %>
 
-    <%= link_to '投稿一覧に戻る',posts_path %>
+
+
