@@ -41,7 +41,11 @@
             </td>
             <% if @post_detail.image.attached? %>
               <td class="table_co">
-                <%= image_tag @post_detail.image.variant(resize: '500x500') %>
+                <%= image_tag @post_detail.image.variant(resize: '400x400') %>
+              </td>
+            <% else %>
+              <td class="table_co">
+                <%= image_tag 'no_image2', size: "200x200" %>
               </td>
             <% end %>
            </tr>
@@ -105,15 +109,15 @@
        </div>
      </div>
      <br>
-             <p class="tag_design">
-               タグ:
-             </p>
-            <% @post_detail.tags.each do |tag| %>
-            <p class="tag_age">
-              <%= tag.name %>
-            </p>
-            <% end %>
-            <br>
+     <p class="tag_design">
+       タグ:
+     </p>
+    <% @post_detail.tags.each do |tag| %>
+    <p class="tag_age">
+      <%= tag.name %>
+    </p>
+    <% end %>
+    <br>
      <% if @post_detail.favorited_by?(current_member) %>
        <div class="row">
         <h4>
@@ -143,7 +147,7 @@
           <p>コメント件数：<%= @post_detail.comments.count %></p>
         <% @post_detail.comments.each do |post_comment| %>
         <p>
-          <%= post_comment.member.full_name %>
+          投稿者:<%= post_comment.member.full_name %>
           <%= post_comment.created_at.strftime('%Y/%m/%d') %>
           <p><%= safe_join(post_comment.comment.split("\n"),tag(:br)) %></p>
           <% if post_comment.member == current_member %>
