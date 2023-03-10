@@ -11,56 +11,95 @@
       <br>
    <div class="row justify-content-center">
      <div class="col-12">
-      <table class ="table table-borderless">
+      <table border="1">
         <tbody>
           <tr>
-            <td class="table-success">
+            <td class="table_co">
               タイトル
             </td>
-            <td class="table-success">
+            <td class="table_co">
               <%= @post_detail.title %>
             </td>
           </tr>
           <tr>
-           <td class="table-success">
+           <td class="table_co">
              投稿者
            </td>
-            <td class="table-success">
+            <td class="table_co">
               <%= @post_detail.member.last_name %> <%= @post_detail.member.first_name %>
             </td>
-
-          <p>画像</p>
-          <% if @post_detail.image.attached? %>
-            <p><%= image_tag @post_detail.image.variant(resize: '500x500') %></p>
-          <% end %>
-
-          <p>都道府県</p>
-          <p><%= @post_detail.prefectues %></p>
-
-          <p>住所</p>
-          <p><%= @post_detail.area %></p>
-
-          <p>アクセス</p>
-          <p><%= @post_detail.access %></p>
-
-          <p>周辺情報</p>
-          <p><%= @post_detail.nearby_information %></p>
-
-          <p>巡り方</p>
-          <p><%= @post_detail.go_around %></p>
-
-          <p>感想</p>
-          <p><%= @post_detail.impressions %></p>
-
-          <p>タグ</p>
-          <% @post_detail.tags.each do |tag| %>
-          <p><%= tag.name %></p>
-          <% end %>
+           </tr>
+           <tr>
+            <td class="table_co">
+              画像
+            </td>
+            <% if @post_detail.image.attached? %>
+              <td class="table_co">
+                <%= image_tag @post_detail.image.variant(resize: '500x500') %>
+              </td>
+            <% end %>
+           </tr>
+           <tr>
+            <td class="table_co">
+              都道府県
+            </td>
+            <td class="table_co">
+              <%= @post_detail.prefectues %>
+            </td>
+           </tr>
+           <tr>
+            <td class="table_co">
+              住所
+            </td>
+            <td class="table_co">
+              <%= @post_detail.area %>
+            </td>
+          </tr>
+          <tr>
+           <td class="table_co">
+            アクセス
+           </td>
+           <td class="table_co text-left">
+             <%= safe_join(@post_detail.access.split("\n"),tag(:br)) %>
+           </td>
+          </tr>
+          <tr>
+            <td class="table_co">
+              周辺情報
+            </td>
+            <td class="table_co text-left">
+              <%= safe_join(@post_detail.nearby_information.split("\n"),tag(:br)) %>
+            </td>
+          </tr>
+          <tr>
+           <td class="table_co">
+            巡り方
+           </td>
+            <td class="table_co text-left">
+              <%= safe_join(@post_detail.go_around.split("\n"),tag(:br)) %>
+            </td>
+          </tr>
+          <tr>
+            <td class="table_co">
+              感想
+            </td>
+            <td class="table_co text-left">
+              <%= safe_join(@post_detail.impressions.split("\n"),tag(:br)) %>
+            </td>
+          </tr>
         </tbody>
        </table>
       </div>
      </div>
-
+     <br>
+             <p class="tag_design">
+               タグ:
+             </p>
+            <% @post_detail.tags.each do |tag| %>
+            <p class="tag_age">
+              <%= tag.name %>
+            </p>
+            <% end %>
       <% if @post_detail.favorited_by?(current_member) %>
         <p>
           <%= link_to post_bookmarks_path(@post_detail), method: :delete do %>
@@ -69,7 +108,7 @@
         </p>
       <% else %>
         <p>
-          <%= link_to post_bookmarks_path(@post_detail), method: :post do %>
+          <%= link_to post_bookmarks_path(@post_detail), style: "color: red;",method: :post do %>
           ♥<%= @post_detail.bookmarks.count %>いいね
          <% end %>
         </p>
