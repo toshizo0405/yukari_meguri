@@ -1,16 +1,30 @@
 <div class="background_mypost">
-
+ <br>
+ <div class="row">
+   <div class="col-1"></div>
+   <div class="col-8">
     <h3><%= link_to '投稿はこちらから',new_post_path %></h3>
-    
-    
-    <h1>投稿一覧(全<%= Post.count %>件）</h1>
-    
+   </div>
+  </div>
+  <div class="row">
+   <div class="col-5"></div>
+   <div class="col-4">
+    <h2>投稿一覧(全<%= Post.count %>件）</h2>
+   </div>
+  </div>
+ <div class="row">
+   <div class="col-4"></div>
+   <div class="col-4"></div>
+   <div class="col-4">
     <%= search_form_for @search do |f| %>
       <%= f.label :posts, "検索" %>
       <%= f.search_field :title_or_tags_name_cont %>
       <%= f.submit "検索する" %>
     <% end %>
-    
+   </div>
+ </div>
+
+   <br>
     <table border="1" >
       <thead>
         <tr>
@@ -31,5 +45,11 @@
       </tbody>
       <% end %>
     </table>
-    <%= paginate @posts %>
+    <br>
+  <div class="row">
+    <div class="col-5"></div>
+    <div class="col-4">
+      <h4><%= paginate @posts %></h4>
+    </div>
+  </div>
 </div>
