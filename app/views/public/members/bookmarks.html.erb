@@ -1,20 +1,25 @@
-<p>いいねをした投稿一覧</p>
+<div class="background_mypost">
+    <p>いいねをした投稿一覧</p>
 
-<table border="1" >
-  <thead>
-    <tr>
-      <th>投稿日</th>
-      <th>投稿タイトル</th>
-    </tr>
-  </thead>
-  <% @bookmark_posts.each do |bookmark| %>
-  <tbody>
-    <tr>
-      <td><%= bookmark.member.full_name %></td>
-      <td><%= bookmark.created_at.strftime('%Y/%m/%d') %></td>
-      <td><%= link_to bookmark.title, post_path(bookmark.id) %></td>
-    </tr>
-  </tbody>
-  <% end %>
-</table>
-<%= paginate @bookmark %>
+    <table border="1" >
+      <thead>
+        <tr>
+          <th>投稿者</th>
+          <th>投稿タイトル</th>
+          <th>投稿日</th>
+          <th>コメント</th>
+        </tr>
+      </thead>
+      <% @bookmark_posts.each do |bookmark| %>
+      <tbody>
+        <tr>
+          <td><%= bookmark.member.full_name %></td>
+          <td><%= link_to bookmark.title, post_path(bookmark.id) %></td>
+          <td><%= bookmark.created_at.in_time_zone('Tokyo').strftime('%Y-%m-%d %H:%M:%S') %></td>
+          <td><%= "#{bookmark.comments.count} コメント" %></td>
+        </tr>
+      </tbody>
+      <% end %>
+    </table>
+    <%= paginate @bookmark %>
+</div>
