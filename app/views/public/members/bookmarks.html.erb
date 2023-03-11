@@ -1,5 +1,13 @@
 <div class="background_mypost">
-    <p>いいねをした投稿一覧</p>
+ <div class="container">
+   <br>
+   <div class="row">
+     <div class="col-4"></div>
+     <div class="col-4">
+      <h2>いいねをした投稿一覧<br>(全<%= Bookmark.count %>件)</h2>
+     </div>
+   </div>
+   <br>
 
     <table border="1" >
       <thead>
@@ -21,5 +29,12 @@
       </tbody>
       <% end %>
     </table>
-    <%= paginate @bookmark %>
+    <br>
+   <div class="row">
+     <div class="col-5"></div>
+     <div class="col-4">
+      <p><%= paginate @bookmark %></p>
+     </div>
+   </div>
+ </div>
 </div>

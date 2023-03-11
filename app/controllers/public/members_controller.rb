@@ -38,9 +38,8 @@ class Public::MembersController < ApplicationController
   end
 
   def index
-    # binding.pry
     @member = Member.find(current_member.id)
-    @post_Individual = Post.where(member_id: @member.id).page(params[:page])
+    @post_Individual = Post.where(member_id: @member.id).page(params[:page]).order(created_at: :desc)
   end
 
 end
