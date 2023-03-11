@@ -3,16 +3,12 @@ class Public::PostsController < ApplicationController
   before_action :authenticate_member!,except:[:top,:about]
 
   def index
-    @posts=Post.page(params[:page])
-    # 検索オブジェクト
-    # @search = Post.ransack(:title => params[:q]["title"])
-    # @search = Post.ransack(title_matches: "%"+params[:q]["title"]+"%")
-    #@search = Post.ransack(title_matches: params[:q]["tag"])
+    
     @search = Post.ransack(params[:q])
     if params[:q]
-      @posts = @search.result(distinct: true).page(params[:page])
+      @posts = @search.result(distinct: true).page(params[:page]).order(created_at: :desc)
     else
-      @posts = @search.result.page(params[:page])
+      @posts = @search.result.page(params[:page]).order(created_at: :desc)
     end
 
   end

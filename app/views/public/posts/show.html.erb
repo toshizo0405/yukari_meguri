@@ -23,7 +23,7 @@
             <td class="table_co">
               タイトル
             </td>
-            <td class="table_co">
+            <td>
               <%= @post_detail.title %>
             </td>
           </tr>
@@ -31,7 +31,7 @@
            <td class="table_co">
              投稿者
            </td>
-            <td class="table_co">
+            <td>
               <%= @post_detail.member.last_name %> <%= @post_detail.member.first_name %>
             </td>
            </tr>
@@ -40,11 +40,11 @@
               画像
             </td>
             <% if @post_detail.image.attached? %>
-              <td class="table_co">
+              <td>
                 <%= image_tag @post_detail.image.variant(resize: '400x400') %>
               </td>
             <% else %>
-              <td class="table_co">
+              <td>
                 <%= image_tag 'no_image2', size: "200x200" %>
               </td>
             <% end %>
@@ -53,7 +53,7 @@
             <td class="table_co">
               都道府県
             </td>
-            <td class="table_co">
+            <td>
               <%= @post_detail.prefectues %>
             </td>
            </tr>
@@ -61,7 +61,7 @@
             <td class="table_co">
               住所
             </td>
-            <td class="table_co">
+            <td>
               <%= @post_detail.area %>
             </td>
           </tr>
@@ -69,7 +69,7 @@
            <td class="table_co">
             アクセス
            </td>
-           <td class="table_co text-left">
+           <td class="text-left">
              <%= safe_join(@post_detail.access.split("\n"),tag(:br)) %>
            </td>
           </tr>
@@ -77,7 +77,7 @@
             <td class="table_co">
               周辺情報
             </td>
-            <td class="table_co text-left">
+            <td class="text-left">
               <%= safe_join(@post_detail.nearby_information.split("\n"),tag(:br)) %>
             </td>
           </tr>
@@ -85,7 +85,7 @@
            <td class="table_co">
             巡り方
            </td>
-            <td class="table_co text-left">
+            <td class="text-left">
               <%= safe_join(@post_detail.go_around.split("\n"),tag(:br)) %>
             </td>
           </tr>
@@ -93,7 +93,7 @@
             <td class="table_co">
               感想
             </td>
-            <td class="table_co text-left">
+            <td class="text-left">
               <%= safe_join(@post_detail.impressions.split("\n"),tag(:br)) %>
             </td>
           </tr>
@@ -126,6 +126,7 @@
          <% end %>
         </h4>
       </div>
+      <p>いいね数:<%= @post_detail.bookmarks.count %></p>
       <% else %>
       <div class="row">
         <h4>
@@ -143,7 +144,8 @@
         <% end %>
        </div>
 
-         いいね数:<%= @post_detail.bookmarks.count %>
+         <br>
+         <h4>コメント欄</h4>
           <p>コメント件数：<%= @post_detail.comments.count %></p>
         <% @post_detail.comments.each do |post_comment| %>
         <p>
