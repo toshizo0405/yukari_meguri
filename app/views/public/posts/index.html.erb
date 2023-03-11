@@ -1,34 +1,35 @@
-<h4>ようこそ!ゆかり巡りの世界へ!</h4>
+<div class="background_mypost">
 
-<h3><%= link_to '投稿はこちらへ',new_post_path %></h3>
-
-
-<h1>投稿一覧(全<%= Post.count %>件）</h1>
-
-<%= search_form_for @search do |f| %>
-  <%= f.label :posts, "検索" %>
-  <%= f.search_field :title_or_tags_name_cont %>
-  <div class="actions"><%= f.submit "検索" %></div>
-<% end %>
-
-<table border="1" >
-  <thead>
-    <tr>
-      <th>投稿者</th>
-      <th>投稿タイトル</th>
-      <th>投稿日</th>
-      <th>コメント</th>
-    </tr>
-  </thead>
-  <% @posts.each do |input| %>
-  <tbody>
-    <tr>
-      <td><%= input.member.full_name %></td>
-      <td><%= link_to input.title,post_path(input.id) %></td>
-      <td><%= input.created_at.strftime('%Y/%m/%d') %></td>
-      <td><%= link_to "#{input.comments.count} コメント", post_path(input.id) %></td>
-    </tr>
-  </tbody>
-  <% end %>
-</table>
-<%= paginate @posts %>
+    <h3><%= link_to '投稿はこちらから',new_post_path %></h3>
+    
+    
+    <h1>投稿一覧(全<%= Post.count %>件）</h1>
+    
+    <%= search_form_for @search do |f| %>
+      <%= f.label :posts, "検索" %>
+      <%= f.search_field :title_or_tags_name_cont %>
+      <%= f.submit "検索する" %>
+    <% end %>
+    
+    <table border="1" >
+      <thead>
+        <tr>
+          <th>投稿者</th>
+          <th>投稿タイトル</th>
+          <th>投稿日</th>
+          <th>コメント</th>
+        </tr>
+      </thead>
+      <% @posts.each do |input| %>
+      <tbody>
+        <tr>
+          <td><%= input.member.full_name %></td>
+          <td><%= link_to input.title,post_path(input.id) %></td>
+          <td><%= input.created_at.strftime('%Y/%m/%d') %></td>
+          <td><%= link_to "#{input.comments.count} コメント", post_path(input.id) %></td>
+        </tr>
+      </tbody>
+      <% end %>
+    </table>
+    <%= paginate @posts %>
+</div>
