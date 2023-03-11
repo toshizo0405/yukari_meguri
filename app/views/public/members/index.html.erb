@@ -2,10 +2,12 @@
   <div class="container">
     <br>
     <div class="row">
-      <div class="col-12">
-      <h2><%= @member.full_name %>さんの投稿履歴一覧(全<%= @post_Individual.count %>件）</h2>
+      <div class="col-4"></div>
+      <div class="col-4">
+      <h2><%= @member.full_name %>さんの<br>投稿履歴一覧(全<%= @post_Individual.count %>件）</h2>
       </div>
     </div>
+    
       <br>
       <table border="1" >
         <thead>
@@ -15,7 +17,6 @@
             <th>コメント数</th>
           </tr>
         </thead>
-
         <tbody>
           <% @post_Individual.each do |post| %>
           <tr>
@@ -25,9 +26,13 @@
           </tr>
           <% end %>
         </tbody>
-
       </table>
-
-      <%= paginate @post_Individual %>
+      <br>
+    <div class="row">
+     <div class="col-5"></div>
+     <div class="col-4">
+      <p><%= paginate @post_Individual %></p>
+     </div>
+    </div>
   </div>
 </div>
