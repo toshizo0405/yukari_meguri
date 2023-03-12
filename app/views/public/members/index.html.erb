@@ -7,8 +7,11 @@
       <h2><%= @member.full_name %>さんの<br>投稿履歴一覧(全<%= @post_Individual.count %>件）</h2>
       </div>
     </div>
-    
+
       <br>
+  <div class="row">
+   <div class="col-2"></div>
+   <div class="col-10">
       <table border="1" >
         <thead>
           <tr>
@@ -27,6 +30,8 @@
           <% end %>
         </tbody>
       </table>
+     </div>
+    </div>
       <br>
     <div class="row">
      <div class="col-5"></div>
