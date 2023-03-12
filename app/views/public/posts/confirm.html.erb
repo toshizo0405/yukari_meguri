@@ -62,7 +62,7 @@
           <p><%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name, checked: @tag_ids) do |tag| %>
                 <%= tag.check_box(disabled: true) %> <%= tag.text %></p>
              <% end %>
-          <p><%= f.submit '投稿する' %></p>
+          <p><%= f.submit '投稿する',class: 'sign-btn' %></p>
           <%= f.hidden_field :tags, value: @tag_ids.join(' ') %>
         <% end %>
       </div>
