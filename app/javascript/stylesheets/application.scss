@@ -77,9 +77,39 @@ h6{
 
 .top_mesg{
   position:absolute;
-  top:35%;
-  left:30%;
+  top:19%;
+  left:10%;
   color:#ffffff;
+  width: 65%;
+  height: 300px;
+}
+
+.main-title{
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  color: #fff;
+  font-size: 3rem;
+  font-family: serif;
+  position: absolute;
+  top: 15px;
+  right: 50px;
+  border: 1px solid #fff;
+  padding: 5px;
+
+}
+
+.sub-title{
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  color: #fff;
+  font-size: 2rem;
+  font-family: serif;
+  position: absolute;
+  bottom: 15px;
+  left: 40px;
+
 }
 
 .background_form{
