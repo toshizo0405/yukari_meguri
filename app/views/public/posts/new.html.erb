@@ -1,8 +1,9 @@
 <div class="background_form">
   <div class="container">
       <br>
+      <br>
       <div class="row">
-       <div class="col-5">
+       <div class="col-4">
        </div>
        <div class="col-4">
         <h2>投稿入力フォーム</h2>
@@ -13,30 +14,31 @@
 
       <div class="row justify-content-center">
       　<div class="col-12">
+      　  <div class="row justify-content-center">
       　  <%= form_with model: @post_input,url: "/posts/unsubscribe", method: :post do |f| %>
-      　    <table class="table table-borderless">
-      　      <tbody>
+      　    <table bolder="1">
+    　       <thead>
       　        <tr>
-      　          <td class="table-success">
+      　          <td class="table_co">
       　            <%= f.label :"タイトル" %>
       　          </td>
-      　          <td class="table-success">
+      　          <td>
       　             <%= f.text_field :title,size:"50" %>
       　          </td>
       　        </tr>
         　      <tr>
-      　          <td class="table-success">
+      　          <td class="table_co">
                     <%= f.label :"画像" %>
       　          </td>
-      　          <td class="table-success">
+      　          <td>
       　            <%= f.file_field :image, placeholder: "選択されていません", accept: "image/*" %>
       　          </td>
       　        </tr>
         　      <tr>
-      　          <td class="table-success">
+      　          <td class="table_co">
                    <%= f.label :"都道府県" %>
       　          </td>
-      　          <td class="table-success">
+      　          <td>
       　           　<%= f.select :prefectues, [["北海道", "北海道"], ["青森県", "青森県"], ["岩手県", "岩手県"], ["宮城県", "宮城県"], ["秋田県", "秋田県"],
               ["山形県", "山形県"],  ["福島県", "福島県"], ["茨城県", "茨城県"], ["栃木県", "栃木県"], ["群馬県", "群馬県"], ["埼玉県", "埼玉県"], ["千葉県", "千葉県"], ["東京都", "東京都"],
               ["神奈川県", "神奈川県"], ["新潟県", "新潟県"], ["富山県", "富山県"], ["石川県", "石川県"], ["福井県", "福井県"], ["山梨県", "山梨県"], ["長野県", "長野県"], ["岐阜県", "岐阜県"],
@@ -47,63 +49,69 @@
       　          </td>
       　        </tr>
                 <tr>
-      　          <td class="table-success">
+      　          <td class="table_co">
                    <%= f.label :"住所" %><br>
-                   <%= f.label :"※スタート地点の" %><br>
+                   <%= f.label :"※スタート地点の" %>
       　          </td>
-      　          <td class="table-success">
-                   <%= f.text_area :area ,size:"60x3" %>
+      　          <td>
+                   <%= f.text_area :area ,size:"50x3" %>
       　          </td>
       　        </tr>
       　        <tr>
-      　          <td class="table-success">
+      　          <td class="table_co">
                    <%= f.label :"アクセス" %>
       　          </td>
-      　          <td class="table-success">
+      　          <td>
                    <%= f.text_area :access,size: "50x10"  %>
       　          </td>
       　        </tr>
       　        <tr>
-      　          <td class="table-success">
+      　          <td class="table_co">
                    <%= f.label :"周辺情報" %>
       　          </td>
-      　          <td class="table-success">
+      　          <td>
                    <%= f.text_area :nearby_information,size: "50x10" %>
       　          </td>
       　        </tr>
       　        <tr>
-      　          <td class="table-success">
+      　          <td class="table_co">
                    <%= f.label :"巡り方" %>
       　          </td>
-      　          <td class="table-success">
+      　          <td>
                     <%= f.text_area :go_around,size: "50x10" %>
       　          </td>
       　        </tr>
       　        <tr>
-      　          <td class="table-success">
+      　          <td class="table_co">
                    <%= f.label :"感想" %>
       　          </td>
-      　          <td class="table-success">
+      　          <td>
                    <%= f.text_area :impressions,size: "50x10" %>
       　          </td>
       　        </tr>
       　        <tr>
-      　          <td class="table-success">
+      　          <td class="table_co">
                    <%= f.label :"タグ登録" %>
       　          </td>
-      　          <td class="table-success">
+      　          <td>
                    <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
                     　<div><%= tag.check_box %><%= tag.text %></div>
                    <% end %>
       　          </td>
       　        </tr>
+      　       </thead>
       　      </tbody>
       　    </table>
-      　</div>
+      　    <br>
             <div class="row">
-              <%= f.submit '確認画面に進む'%>
+             <div class="col-5"></div>
+             <div class="col-5">
+              <%= f.submit '確認画面に進む',class: 'sign-btn' %>
+             </div>
             </div>
           <% end %>
+          </div>
+       </div>
       </div>
   </div>
 </div>
