@@ -7,8 +7,8 @@
   </div>
 
    <div class ="row">
-
-    <div class = "col-12" >
+   <div class="col-1"></div>
+    <div class = "col-5" >
       <%= image_tag 'otera_1.jpg', size: '900x500' %>
     </div>
     <div class = "top_mesg" >
@@ -16,12 +16,13 @@
      <h2 class="sub-title">歴史との出会い</h2>
     </div>
    </div>
-
+   <br>
   <h2>新着投稿</h2>
+  <br>
   <div class="row">
    <div class="col-12">
     <ul class ="list-inline">
-     <% @posts.first(10).each do |post| %>
+     <% @posts.first(12).each do |post| %>
        <li class="list-inline-item">
         <%= post.created_at.strftime('%Y/%m/%d') %><br>
         <%= link_to post.title,post_path(post.id) %><br>
