@@ -1,68 +1,101 @@
-<div class="background_sign">
+<div class="background_entry">
  <div class="container">
    <br>
    <div class="row">
     <div class="col-4"></div>
     <div class="col-4">
       <h2>新規会員登録</h2>
-      <p>新規の方はこちらへ<br>入力をお願いします。</p>
+      <p> &nbsp; &nbsp;  &nbsp; 新規の方はこちらへ<br> &nbsp; &nbsp; &thinsp; 入力をお願いします。</p>
     </div>
    </div>
-   <div class="row">
-    <div class="col-4"></div>
-    <div class="col-4">
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= render "public/shared/error_messages", resource: resource %>
 
-        <div class="field">
-          <%= f.label :"メールアドレス" %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-        </div>
 
-        <div class="field">
-          <%= f.label :"名前(性)" %><br>
-          <%= f.text_field :last_name %>
-          <%= f.label :"(名)" %><br>
-          <%= f.text_field :first_name %>
-        </div>
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= render "public/shared/error_messages", resource: resource %>
+      <table border="1">
+       <tbody>
+         <tr>
+           <td class="table_co">
+             <%= f.label :"名前" %>
+            </td>
+            <td>
+             <%= f.label :"(性)" %> &nbsp; &nbsp; <%= f.text_field :last_name %>
+            </td>
+            <td>
+             <%= f.label :"(名)" %> &nbsp; &nbsp; <%= f.text_field :first_name %>
+            </td>
+         </tr>
+         <tr>
+           <td class="table_co">
+             <%= f.label :"フリガナ" %>
+           </td>
+           <td>
+             <%= f.label :"(セイ)" %> <%= f.text_field :last_name_kana %>
+           </td>
+           <td>
+             <%= f.label :"(メイ)" %> <%= f.text_field :first_name_kana %>
+           </td>
+         </tr>
+         <tr>
+           <td class="table_co">
+             <%= f.label :"メールアドレス" %>
+           </td>
+           <td>
+            　&emsp; &nbsp; <%= f.email_field :email,:size=>"40", autofocus: true, autocomplete: "email" %>
+           </td>
+           <td>
 
-        <div class="field">
-          <%= f.label :"フリガナ(セイ)" %><br>
-          <%= f.text_field :last_name_kana %>
-          <%= f.label :"(メイ)" %><br>
-          <%= f.text_field :first_name_kana %>
-        </div>
+           </td>
+         </tr>
+         <tr>
+           <td class="table_co">
+             <%= f.label :"パスワード" %>
+           </td>
+           <td>
+             <% if @minimum_password_length %>
+             &emsp; &nbsp; <em>(最低 <%= @minimum_password_length %> 文字以上)</em>
+             <% end %><br />
+            &emsp; &nbsp; &nbsp; &thinsp; <%= f.password_field :password, autocomplete: "new-password" %>
+           </td>
+           <td>
 
-        <div class="field">
-          <%= f.label :"パスワード" %>
-          <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %><br />
-          <%= f.password_field :password, autocomplete: "new-password" %>
-        </div>
+           </td>
+         </tr>
+         <tr>
+           <td class="table_co">
+             <%= f.label :"パスワード(確認)" %>
+           </td>
+           <td>
+             &emsp; &nbsp; &nbsp; &nbsp; <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+           </td>
+           <td>
 
-        <div class="field">
-          <%= f.label :"パスワード'(確認)" %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+           </td>
+         </tr>
         </div>
+       </div>
+       </tbody>
+      </table>
         <br>
         <div class="row actions">
-         <div class="col-4"></div>
+         <div class="col-5"></div>
          <div class="col-4">
             <%= f.submit "新規登録",class: 'sign-btn' %>
          </div>
+         <br>
+      　 <div class="row">
+          <div class="col-12">
+            <h4> &emsp; &emsp; &emsp; &emsp;  &emsp; すでに登録している会員の方はこちらから、<%= render "public/shared/links" %>してください。</h4>
+          </div>
+       </div>
+
         </div>
       <% end %>
+     </div>
+    </div>
     </div>
    </div>
-   <br>
-   <div class="row">
-     <div class="col-4"></div>
-     <div class="col-6">
-      <h4>すでに登録している会員の方は</h4>
-      <h4>こちらから<%= render "public/shared/links" %>してください。</h4>
-     </div>
-   </div>
-
  </div>
 </div>
