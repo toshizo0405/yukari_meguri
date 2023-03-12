@@ -5,18 +5,18 @@
     <%= link_to 'ゲストログイン', members_guest_sign_in_path, method: :post %>
    </div>
   </div>
- 
+
    <div class ="row">
- 
+
     <div class = "col-12" >
       <%= image_tag 'otera_1.jpg', size: '900x500' %>
     </div>
     <div class = "top_mesg" >
-     ようこそ！ゆかり巡りへ！<br>
-     <br>
-     このサイトは、歴史好きの人のためのコミュニティサイトです!
+     <h1 class="main-title">ゆかり巡り</h1>
+     <h2 class="sub-title">歴史との出会い</h2>
     </div>
    </div>
+
   <h2>新着投稿</h2>
   <div class="row">
    <div class="col-12">
@@ -30,11 +30,11 @@
     </ul>
    </div>
   </div>
- 
- 
+
+
  <%#= link_to "退会する", members_withdraw_path, method: :patch, data: { confilm: "本当に退会しますか？" } %>
- 
+
  <%#= link_to 'ゲストログイン（閲覧用）', members_guest_sign_in_path, method: :post %>
- 
+
  </div>
 </div>
