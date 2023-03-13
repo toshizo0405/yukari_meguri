@@ -8,10 +8,9 @@
     </div>
       <br>
       <div class="row">
-       <div class="col-5">
-       </div>
+       <div class="col-5"></div>
        <div class="col-4">
-        <h2>投稿詳細画面</h2>
+        <h2>投稿詳細</h2>
        </div>
       </div>
       <br>
@@ -32,7 +31,7 @@
              投稿者
            </td>
             <td>
-              <%= @post_detail.member.last_name %> <%= @post_detail.member.first_name %>
+              <%= @post_detail.member.full_name %>
             </td>
            </tr>
            <tr>
@@ -59,7 +58,8 @@
            </tr>
            <tr>
             <td class="table_co">
-              住所
+              住所<br>
+              ※スタート地点の
             </td>
             <td>
               <%= @post_detail.area %>
@@ -157,6 +157,8 @@
         </p>
           <% end %>
         <% end %>
+ </div>
+</div>
 
 
 
