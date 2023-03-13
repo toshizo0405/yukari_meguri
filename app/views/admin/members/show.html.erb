@@ -1,10 +1,10 @@
-<div class="background_mypost">
+<div class="background_edit">
  <div class="container">
     <br>
     <div class="row">
       <div class="col-4"></div>
       <div class="col-6">
-        <h1><%= @member.last_name %> <%= @member.first_name %>さんの会員詳細</h1>
+        <h1><%= @member.full_name %> さんの会員詳細</h1>
       </div>
      </div>
      <br>
@@ -20,11 +20,11 @@
             </tr>
             <tr>
               <td class="table_co">名前</td>
-              <td><%= @member.last_name %>  <%= @member.first_name %></td>
+              <td><%= @member.full_name %></td>
             </tr>
             <tr>
               <td class="table_co">フリガナ</td>
-              <td><%= @member.last_name_kana %>  <%= @member.first_name_kana %></td>
+              <td><%= @member.full_name_kana %></td>
             </tr>
             <tr>
               <td class="table_co">メールアドレス</td>
@@ -62,9 +62,6 @@
            <%= link_to '会員の投稿履歴へ', admin_posts_path(member_id: @member.id), class: 'sign-btn' %>
           </div>
          </div>
-
-        </div>
-      </div>
 
  </div>
 </div>
