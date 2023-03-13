@@ -1,36 +1,70 @@
-<h2>会員詳細画面</h2>
+<div class="background_mypost">
+ <div class="container">
+    <br>
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="col-6">
+        <h1><%= @member.last_name %> <%= @member.first_name %>さんの会員詳細</h1>
+      </div>
+     </div>
+     <br>
+    <div class="row">
+     <div class="col-2"></div>
+     <div class="col-10">
+      <table border="1">
+       <thead>
+          <tbody>
+            <tr>
+              <td class="table_co">会員ID</td>
+              <td><%= @member.id %></td>
+            </tr>
+            <tr>
+              <td class="table_co">名前</td>
+              <td><%= @member.last_name %>  <%= @member.first_name %></td>
+            </tr>
+            <tr>
+              <td class="table_co">フリガナ</td>
+              <td><%= @member.last_name_kana %>  <%= @member.first_name_kana %></td>
+            </tr>
+            <tr>
+              <td class="table_co">メールアドレス</td>
+              <td><%= @member.email %></td>
+            </tr>
+            <tr>
+              <td class="table_co">会員ステータス</td>
+              <td>
+                <% if @member.withdrawal %>
+                <b class="text-secondary">退会</b>
+                <% else %>
+                <b class="text-success">有効</b>
+                <% end %>
+              </td>
+            </tr>
+          </tbody>
+         </thead>
+        </table>
+       </div>
+      </div>
+      <br>
+         <div class="row">
+          <div class="col-4"></div>
+          <div class="col-3" >
+       　     <%= link_to 'ステータスの変更', edit_admin_member_path(@member.id), class: 'sign-btn' %>
+          </div>
+          <div class="col-5">
+              <%= link_to '投稿一覧画面に戻る', admin_members_path, class: 'sign-btn'%>
+          </div>
+         </div>
+         <br>
+         <div class="row justify-content-center">
+          <div class="col-2"></div>
+          <div class="col-3">
+           <%= link_to '会員の投稿履歴へ', admin_posts_path(member_id: @member.id), class: 'sign-btn' %>
+          </div>
+         </div>
 
-<div class="col-md-8 offset-md-1">
-  <div class="row">
-<table class="table">
-    <thead>
-      <tr><b><%= @member.last_name %> <%= @member.first_name %>さんの会員詳細</b></tr>
-    </thead>
+        </div>
+      </div>
 
-    <tbody>
-      <tr><td>会員ID</td><td><%= @member.id %></td></tr>
-      <tr><td>名前</td><td><%= @member.last_name %>  <%= @member.first_name %></td></tr>
-      <tr><td>フリガナ</td><td><%= @member.last_name_kana %>  <%= @member.first_name_kana %></td></tr>
-      <tr><td>メールアドレス</td><td><%= @member.email %></td></tr>
-      <tr><td>
-        会員ステータス
-        </td><td>
-        <% if @member.withdrawal %>
-        <b class="text-secondary">退会</b>
-        <% else %>
-        <b class="text-success">有効</b>
-        <% end %>
-      </td></tr>
-    </tbody>
-  </table>
-    <div class="col-md-4" >
- 　     <%= link_to 'ステータスの変更', edit_admin_member_path(@member.id), class:"btn btn-success" %>
-    </div>
-    <div class="col-md-6">
-        <%= link_to '投稿一覧画面に戻る', admin_members_path, class:"btn btn-success" %>
-    </div>
-    <div class="col-md-6">
-        <%= link_to '会員の投稿履歴へ', admin_posts_path(member_id: @member.id), class:"btn btn-success" %>
-    </div>
-  </div>
+ </div>
 </div>
