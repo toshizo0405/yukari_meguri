@@ -1,28 +1,52 @@
-<h2>会員情報編集画面</h2>
+<div class="background_edit">
+ <div class="container">
+   <br>
 
-
-<div class="col-md-10 offset-md-1">
-  <div class="row">
-
-<%= form_with model: @member, url: admin_member_path(@member.id), method: :patch do |f| %>
-  <table class="table">
-      <thead>
-        <tr><b><%= @member.last_name %> <%= @member.first_name %>さんの会員情報 </b></tr>
-      </thead>
-        <tbody>
-        <tr><td>会員ID</td><td><%= @member.id %></td></tr>
-        <tr><td>氏名</td><td> <%= @member.first_name %>   <%= @member.last_name %></td></tr>
-        <tr><td>フリガナ</td><td><%= @member.first_name_kana %>   <%= @member.last_name_kana %></td></tr>
-        <tr><td>メールアドレス</td><td><%= @member.email %></td></tr>
-        <tr><td>会員ステータス</td><td>
-          <%= f.radio_button :withdrawal, :false %>
-          <%= f.label :withdrawal, "有効" %>
-          <%= f.radio_button :withdrawal, :true %>
-          <%= f.label :withdrawal, "退会" %>
-        </td></tr>
-      </tbody>
-    </table>
-    <%= f.submit '変更を保存', class: "btn btn-success" %>
-    <% end %>
-  </div>
-  </div>
+  <%= form_with model: @member, url: admin_member_path(@member.id), method: :patch do |f| %>
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="col-6">
+        <table border="1">
+         <thead>
+          <h1><%= @member.full_name %> さんの会員情報 </h1>
+      </div>
+     </div>
+     <br>
+          <tbody>
+            <tr>
+              <td class="table_co">会員ID</td>
+              <td><%= @member.id %></td>
+            </tr>
+            <tr>
+              <td class="table_co">氏名</td>
+              <td> <%= @member.full_name %></td>
+            </tr>
+            <tr>
+              <td class="table_co">フリガナ</td>
+              <td><%= @member.full_name_kana %></td>
+            </tr>
+            <tr>
+              <td class="table_co">メールアドレス</td>
+              <td><%= @member.email %></td>
+            </tr>
+            <tr>
+              <td class="table_co">会員ステータス</td>
+              <td>
+              <%= f.radio_button :withdrawal, :false %>
+              <%= f.label :withdrawal, "有効" %>
+              <%= f.radio_button :withdrawal, :true %>
+              <%= f.label :withdrawal, "退会" %>
+              </td>
+            </tr>
+          </tbody>
+         </thead>
+        </table>
+        <br>
+        <div class="row">
+         <div class="col-3"></div>
+         <div class="col-5">
+          <%= f.submit 'ステータスを変更する', class: 'sign-btn' %>
+         </div>
+  <% end %>
+ </div>
+</div>
