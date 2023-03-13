@@ -1,34 +1,47 @@
-<div class="col-md-8 offset-md-1">
-  <b>会員一覧</b>
-  <p id="notice"></p>
-  <table class="table thead-class">
-    <thead>
-      <tr class="table-secondary">
-        <th>会員ID</th>
-        <th>氏名</th>
-        <th>メールアドレス</th>
-        <th>ステータス</th>
-        <th colspan="5"></th><br>
-      </tr>
-    </thead>
-      <% @members.each do |member| %>
-    <tbody>
-      <tr>
-      <td><%= member.id %></td>
-      <td>
-        <%= link_to member.last_name+member.first_name, admin_member_path(member.id) %>
-      </td>
-      <td><%= member.email %></td>
-      <td>
-        <% if member.withdrawal %>
-          <b class="text-secondary">退会</b>
-        <% else %>
-          <b class="text-success">有効</b>
-        <% end %>
-      </td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
+<div class="background_mypost">
+ <div class="container">
+   <br>
+    <div class="row">
+      <div class="col-5"></div>
+      <div class="col-6">
+        <h1>会員一覧</h1>
+      </div>
+    </div>
+    <br>
+      <table class="table thead-class">
+        <thead>
+          <tr class="table-secondary">
+            <th>会員ID</th>
+            <th>氏名</th>
+            <th>メールアドレス</th>
+            <th>ステータス</th>
 
-  <%= paginate @members %>
+          </tr>
+        </thead>
+          <% @members.each do |member| %>
+        <tbody>
+          <tr>
+          <td><%= member.id %></td>
+          <td>
+            <%= link_to member.last_name+member.first_name, admin_member_path(member.id) %>
+          </td>
+          <td><%= member.email %></td>
+          <td>
+            <% if member.withdrawal %>
+              <b class="text-secondary">退会</b>
+            <% else %>
+              <b class="text-success">有効</b>
+            <% end %>
+          </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <div class="row">
+       <div class="col-5"></div>
+       <div class="col-4">
+        <h4><%= paginate @members %></h4>
+       </div>
+      </div>
+ </div>
+</div>
