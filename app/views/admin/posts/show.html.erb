@@ -13,7 +13,7 @@
     <table border="1">
      <tbody>
       <tr>
-       <td>
+       <td class="table_co">
         タイトル
        </td>
        <td>
@@ -21,7 +21,7 @@
        </td>
       </tr>
       <tr>
-       <td>
+       <td class="table_co">
         画像
        </td>
       <% if @post_detail.image.attached? %>
@@ -35,7 +35,7 @@
        <% end %>
       </tr>
       <tr>
-       <td>
+       <td class="table_co">
         都道府県
        </td>
        <td>
@@ -43,7 +43,7 @@
        </td>
       </tr>
       <tr>
-       <td>
+       <td class="table_co">
         住所<br>
         ※スタート地点の
        </td>
@@ -51,46 +51,75 @@
         <%= @post_detail.area %>
        </td>
       </tr>
-
-
-       <p>アクセス</p>
-       <p><%= @post_detail.access %></p>
-
-       <p>周辺情報</p>
-       <p><%= @post_detail.nearby_information %></p>
-
-       <p>巡り方</p>
-       <p><%= @post_detail.go_around %></p>
-
-       <p>感想</p>
-       <p><%= @post_detail.impressions %></p>
-
+      <tr>
+       <td class="table_co">
+        アクセス
+       </td>
+       <td class="text-left">
+        <%= safe_join(@post_detail.access.split("\n"),tag(:br)) %>
+       </td>
+      </tr>
+      <tr>
+       <td class="table_co">
+        周辺情報
+       </td>
+       <td class="text-left">
+        <%= safe_join(@post_detail.nearby_information.split("\n"),tag(:br)) %>
+       </td>
+      </tr>
+      <tr>
+       <td class="table_co">
+        巡り方
+       </td>
+       <td class="text-left">
+        <%= safe_join(@post_detail.go_around.split("\n"),tag(:br)) %>
+       </td>
+      </tr>
+      <tr>
+       <td class="table_co">
+        感想
+       </td>
+       <td class="text-left">
+        <%= safe_join(@post_detail.impressions.split("\n"),tag(:br)) %>
+       </td>
+      </tr>
      </tbody>
     </table>
    </div>
   </div>
-
-      <p>タグ</p>
-      <% @post_detail.tags.each do |tag| %>
-      <p><%= tag.name %></p>
+  <br>
+  <div class="row">
+   <div class="col-5"></div>
+   <div class="col-4">
+    <h4><%= link_to '投稿を削除する',admin_post_path(@post_detail),method: :delete, style: "color: red;" %></h4>
+   </div>
+  </div>
+  <br>
+   <p class= "tag_design">
+    タグ:
+   </p>
+   <% @post_detail.tags.each do |tag| %>
+   <p class="tag_age">
+    <%= tag.name %>
+   </p>
+   <% end %>
+    <p>いいね件数:</p>
+    <p><%= @bookmark_count %></p>
+    <div>
+      <h4>コメント欄</h4>
+      <p>コメント件数：<%= @post_detail.comments.count %></p>
+      <% @post_detail.comments.each do |post_comment| %>
+      <p>
+        <%= post_comment.member.full_name %>
+        <%= post_comment.created_at.strftime('%Y/%m/%d') %>
+        <p><%= safe_join(post_comment.comment.split("\n"),tag(:br)) %></p>
+        <%= link_to "削除", admin_post_comment_path(post_comment.post, post_comment), method: :delete,style: "color: red;" %>
+      </p>
       <% end %>
-
-      <p>いいね件数</p>
-      <p><%= @bookmark_count %></p>
-
-      <div>
-        <p>コメント件数：<%= @post_detail.comments.count %></p>
-        <% @post_detail.comments.each do |post_comment| %>
-          <%= post_comment.member.full_name %>
-          <%= post_comment.created_at.strftime('%Y/%m/%d') %><%= post_comment.comment %>
-          <%= link_to "削除", admin_post_comment_path(post_comment.post, post_comment), method: :delete %>
-        <% end %>
-       </div>
+     </div>
 
 
-    <%= link_to '削除する',admin_post_path(@post_detail),method: :delete %>
+  <%= link_to '前のページに戻る',admin_root_path %>
 
-    <%= link_to '前のページに戻る',admin_root_path %>
-
- </div>
+</div>
 </div>
