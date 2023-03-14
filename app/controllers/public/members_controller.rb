@@ -34,7 +34,7 @@ class Public::MembersController < ApplicationController
   def bookmarks
     bookmarks = Bookmark.where(member_id: current_member.id).pluck(:post_id)
     @bookmark_posts = Post.find(bookmarks)
-    @bookmark=Post.page(params[:page])
+    @bookmark_posts=Post.page(params[:page]).order(created_at: :desc)
   end
 
   def index
