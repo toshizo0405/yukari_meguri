@@ -7,42 +7,6 @@
       <%= link_to "マイページに戻る", members_my_page_path,class: 'sign-btn' %>
      </div>
   </div>
-    <div class="row">
-      <div class="col-4"></div>
-      <div class="col-6">
-      　<h2><%= @member.full_name %>さんの<br>投稿履歴一覧(全<%= @post_Individual.count %>件）</h2>
-      </div>
-    </div>
-    <br>
-  <div class="row">
-   <div class="col-1"></div>
-   <div class="col-10">
-      <table border="1" >
-        <thead>
-          <tr>
-            <th>投稿日</th>
-            <th>投稿タイトル</th>
-            <th>コメント数</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @post_Individual.each do |post| %>
-          <tr>
-            <td><%= post.created_at.in_time_zone('Tokyo').strftime('%Y-%m-%d %H:%M:%S') %></td>
-            <td><%= link_to post.title, post_path(post) %></td>
-            <td><%=  "#{post.comments.count} コメント"%></td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
-     </div>
-    </div>
-    <br>
-    <div class="row">
-     <div class="col-5"></div>
-     <div class="col-4">
-      <p><%= paginate @post_Individual %></p>
-     </div>
-    </div>
+<%= render 'index', member: @member,post_Individual: @post_Individual %>
   </div>
 </div>
