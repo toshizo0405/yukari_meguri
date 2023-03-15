@@ -2,6 +2,12 @@
  <div class="container">
    <br>
    <div class="row">
+    <div class="col-1"></div>
+    <div class="col-8">
+     <%= link_to "マイページに戻る", members_my_page_path,class: 'sign-btn' %>
+    </div>
+   </div>
+   <div class="row">
      <div class="col-4"></div>
      <div class="col-4">
       <h2>いいねをした投稿一覧<br>(全<%= Bookmark.count %>件)</h2>
