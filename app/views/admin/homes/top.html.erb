@@ -1,44 +1,53 @@
 <%#= link_to 'ログアウト', destroy_manager_session_path, method: :delete %>
 <div class="background_mypost">
-<br>
-  <div class="row">
-   <div class="col-4"></div>
-   <div class="col-6">
-    <h1>管理側の投稿一覧(全<%= Post.count %>件）</h1>
-   </div>
-  </div>
+ <div class="container">
   <br>
-  <div class="row">
-   <div class="col-2"></div>
-   <div class="col-10">
-    <table border="1" >
-      <thead>
-        <tr>
-          <th>投稿者</th>
-          <th>投稿タイトル</th>
-          <th>投稿日</th>
-          <th>コメント</th>
-        </tr>
-      </thead>
-      <% @posts.each do |input| %>
-      <tbody>
-        <tr>
-          <td><%= input.member.full_name %></td>
-          <td><%= link_to input.title,admin_post_path(input.id) %></td>
-          <td><%= input.created_at.strftime('%Y/%m/%d') %></td>
-          <td><%="#{input.comments.count} コメント"  %></td>
-        </tr>
-      </tbody>
-      <% end %>
-    </table>
+    <div class="row">
+     <div class="col-1"></div>
+     <div class="col-8">
+      <%= link_to "会員一覧へ", admin_members_path,class: 'sign-btn' %>
+    </div>
    </div>
- </div>
- <br>
- <div class="row">
-  <div class="col-5"></div>
-  <div class="col-4">
-    <h4><%= paginate @posts %></h4>
-  </div>
+
+    <div class="row">
+     <div class="col-4"></div>
+     <div class="col-6">
+      <h1>会員の投稿履歴一覧(全<%= Post.count %>件）</h1>
+     </div>
+    </div>
+    <br>
+    <div class="row">
+     <div class="col-1"></div>
+     <div class="col-11">
+      <table border="1" >
+        <thead>
+          <tr>
+            <th>投稿者</th>
+            <th>投稿タイトル</th>
+            <th>投稿日</th>
+            <th>コメント</th>
+          </tr>
+        </thead>
+        <% @posts.each do |input| %>
+        <tbody>
+          <tr>
+            <td><%= input.member.full_name %></td>
+            <td><%= link_to input.title,admin_post_path(input.id) %></td>
+            <td><%= input.created_at.strftime('%Y/%m/%d') %></td>
+            <td><%="#{input.comments.count} コメント"  %></td>
+          </tr>
+        </tbody>
+        <% end %>
+      </table>
+     </div>
+   </div>
+   <br>
+   <div class="row">
+    <div class="col-5"></div>
+    <div class="col-4">
+      <h4><%= paginate @posts %></h4>
+    </div>
+   </div>
  </div>
 </div>
 
