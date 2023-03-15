@@ -1,6 +1,12 @@
 <div class="background_complete">
  <div class="container">
     <br>
+    <div class="row">
+     <div class="col-1"></div>
+     <div class="col-8">
+      <%= link_to "前の画面に戻る", admin_member_path(@member),class: 'sign-btn' %>
+    </div>
+   </div>
 <%= render 'public/members/index', member: @member,post_Individual: @post_Individual %>
  </div>
 </div>
