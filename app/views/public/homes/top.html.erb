@@ -3,6 +3,9 @@
  <% if member_signed_in? %>
    <div class ="row">
    <div class ="col-12">
+    <div class="text-success">
+    <%= flash[:notice] %>
+  </div>
    </div>
   </div>
  <% else %>
@@ -12,8 +15,8 @@
    </div>
   </div>
   <div class="text-success">
-  <%= flash[:notice] %>
-</div>
+   <%= flash[:notice] %>
+  </div>
 <% end %>
 
 
