@@ -5,6 +5,10 @@
     <%= link_to 'ゲストログイン', members_guest_sign_in_path, method: :post %>
    </div>
   </div>
+  <div class="text-success">
+  <%= flash[:notice] %>
+</div>
+
 
    <div class ="row">
    <div class="col-1"></div>
