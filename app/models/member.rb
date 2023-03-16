@@ -16,12 +16,12 @@ class Member < ApplicationRecord
   validates :encrypted_password, presence: true
 
   def self.guest
-    find_or_create_by!(email: 'guest@example.com') do |member|
+    find_or_create_by!(email: 'otameshi@example.com') do |member|
       member.password = SecureRandom.urlsafe_base64
-      member.last_name= "ゲスト"
-      member.last_name_kana= "ゲスト"
-      member.first_name= "ユーザー"
-      member.first_name_kana= "ユーザー"
+      member.last_name= "お試し"
+      member.last_name_kana= "オタメシ"
+      member.first_name= "会員"
+      member.first_name_kana= "カイイン"
     end
   end
 
