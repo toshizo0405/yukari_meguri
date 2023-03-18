@@ -21,10 +21,14 @@ class Public::MembersController < ApplicationController
   end
 
   def withdraw
-    @member =current_member
-    @member.update(withdrawal:true)
-    reset_session
-    redirect_to new_member_registration_path
+    if current_member.email == "otameshi@example.com"
+       redirect_to  members_my_page_path,notice: 'ゲストユーザーは退会できません。'
+    else
+      @member =current_member
+      @member.update(withdrawal:true)
+      reset_session
+      redirect_to new_member_registration_path
+    end
   end
 
   def unsubscribe

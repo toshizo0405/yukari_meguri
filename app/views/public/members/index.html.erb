@@ -20,7 +20,7 @@
           </tr>
         </thead>
         <tbody>
-          <% post_Individual.each do |post| %>
+          <% @post_Individual.each do |post| %>
           <tr>
             <td><%= post.created_at.in_time_zone('Tokyo').strftime('%Y-%m-%d %H:%M:%S') %></td>
             <td><%= link_to post.title, post_path(post) %></td>
@@ -35,7 +35,7 @@
     <div class="row">
      <div class="col-5"></div>
      <div class="col-4">
-      <p><%= paginate post_Individual %></p>
+      <p><%= paginate @post_Individual %></p>
      </div>
     </div>
   </div>
