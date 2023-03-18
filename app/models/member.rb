@@ -6,6 +6,7 @@ class Member < ApplicationRecord
 
   has_many :posts,dependent: :destroy
   has_many :bookmarks,dependent: :destroy
+  has_many :bookmark_posts, through: :bookmarks, source: :post
   has_many :comments,dependent: :destroy
 
   validates :last_name, presence: true
