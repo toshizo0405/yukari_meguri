@@ -18,7 +18,7 @@
    <div class="col-4">
     <%= search_form_for @search do |f| %>
       <%= f.label :posts, "検索" %>
-      <%= f.search_field :title_or_tags_name_cont %>
+      <%= f.search_field :title_or_tags_name_cont,placeholder: "ｷｰﾜｰﾄﾞ･ﾀｸﾞを検索" %>
       <%= f.submit "検索する" %>
     <% end %>
    </div>
@@ -33,7 +33,7 @@
         <tr>
           <th>投稿者</th>
           <th>投稿タイトル</th>
-          <th>投稿日</th>
+          <th>投稿日時</th>
           <th>コメント</th>
         </tr>
       </thead>
@@ -42,8 +42,8 @@
         <tr>
           <td><%= input.member.full_name %></td>
           <td><%= link_to input.title,post_path(input.id) %></td>
-          <td><%= input.created_at.strftime('%Y/%m/%d') %></td>
-          <td><%= link_to "#{input.comments.count} コメント", post_path(input.id) %></td>
+          <td><%= input.created_at.in_time_zone('Tokyo').strftime('%Y-%m-%d %H:%M:%S') %></td>
+          <td><%= "#{input.comments.count} コメント" %></td>
         </tr>
       </tbody>
       <% end %>
