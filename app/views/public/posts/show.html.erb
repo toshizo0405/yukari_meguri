@@ -20,7 +20,9 @@
      <div class="row">
        <div class="col-5"></div>
        <div class="col-4">
-         <%= link_to '投稿内容を編集する',edit_post_path(@post_detail),class: 'sign-btn' %>
+        <% if @post_detail.member_id == current_member.id %>
+          <%= link_to '投稿内容を編集する',edit_post_path(@post_detail),class: 'sign-btn' %>
+        <% end %>
        </div>
      </div>
      <br>
