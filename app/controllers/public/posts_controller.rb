@@ -3,7 +3,7 @@ class Public::PostsController < ApplicationController
   before_action :authenticate_member!,except:[:top,:about]
 
   def index
-    
+
     @search = Post.ransack(params[:q])
     if params[:q]
       @posts = @search.result(distinct: true).page(params[:page]).order(created_at: :desc)

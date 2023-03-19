@@ -4,6 +4,7 @@ ja:
     models:
       member: 会員
       post: 投稿
+      comment: コメント
     attributes:
       member:
         encrypted_password: パスワード(確認用)
@@ -20,6 +21,9 @@ ja:
         nearby_information: 周辺情報
         go_around: 巡り方
         impressions: 感想
+      comment:
+       comment: コメント
+
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'

@@ -14,7 +14,7 @@
        </div>
       </div>
       <br>
-<%= render 'show', post_detail: @post_detail %>
+<%= render "public/posts/show", post_detail: @post_detail %>
 
      <br>
      <div class="row">
@@ -53,6 +53,7 @@
         </h4>
       </div>
       <% end %>
+      <%= render 'layouts/error_messages', model: @post_comment %>
       <div>
         <p>コメント入力フォーム:</p>
         <%= form_with model: [@post_detail, @post_comment] do |f| %>
@@ -76,8 +77,3 @@
         <% end %>
  </div>
 </div>
-
-
-
-
-
