@@ -53,9 +53,9 @@
         </h4>
       </div>
       <% end %>
-      <%= render 'layouts/error_messages', model: @post_comment %>
       <div>
         <p>コメント入力フォーム:</p>
+        <%= render 'layouts/error_messages', model: @post_comment %>
         <%= form_with model: [@post_detail, @post_comment] do |f| %>
           <%= f.text_area :comment, size: "50x7", placeholder: "コメントをここに" %>
           <%= f.submit "コメントする" %>
