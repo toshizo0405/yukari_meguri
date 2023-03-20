@@ -42,16 +42,16 @@
            </tr>
            <tr>
             <td class="table_co">
-              住所<br>
-              ※スタート地点の
+              住所
             </td>
-            <td>
-              <%= post_detail.area %>
+            <td class="text-left">
+              <%= safe_join(post_detail.area.split("\n"),tag(:br)) %>
             </td>
           </tr>
           <tr>
            <td class="table_co">
-            アクセス
+            アクセス<br>
+            ※スタート地点の
            </td>
            <td class="text-left">
              <%= safe_join(post_detail.access.split("\n"),tag(:br)) %>

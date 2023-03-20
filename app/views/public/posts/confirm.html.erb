@@ -54,8 +54,8 @@
             <td class="table_co">
              <%= f.label "住所" %>
             </td>
-            <td>
-             <%= @post_input.area %>
+            <td class="text-left">
+             <%= safe_join(@post_input.area.split("\n"),tag(:br)) %>
              <%= f.hidden_field :area, value: @post_input.area %>
             </td>
            </tr>
