@@ -6,10 +6,11 @@ class Public::PostsController < ApplicationController
 
     @search = Post.ransack(params[:q])
     if params[:q]
-      @posts = @search.result(distinct: true).page(params[:page]).order(created_at: :desc)
+      @posts = @search.result(distinct: true).page(params[:page]).order(updated_at: :desc)
     else
-      @posts = @search.result.page(params[:page]).order(created_at: :desc)
+      @posts = @search.result.page(params[:page]).order(updated_at: :desc)
     end
+    @posts = @posts.where(status: 1)
 
   end
 
@@ -61,6 +62,7 @@ class Public::PostsController < ApplicationController
       # flash[:notice] =  "まだ投稿されていません。投稿内容を確認し、投稿ボタンをクリックしてください"
        redirect_to  confirm_path(@post_input.id,tag_ids: @tag_ids)
      else
+
       render :new
      end
     else
@@ -71,9 +73,15 @@ class Public::PostsController < ApplicationController
       @post.image.purge
       @post.member_id = current_member.id
       @tag_ids = params[:post][:tag_ids]
+       @post_input = Post.new(posts_params)
+      @post_input.image.attach(params[:post][:image])
+      @post_input.member_id = current_member.id
+      @tag_ids = params[:post][:tag_ids]
+      #@post_input.save
         if @post.update(posts_params)
          redirect_to  confirm_path(@post.id,tag_ids: @tag_ids)
         else
+
          render :new
         end
     end
