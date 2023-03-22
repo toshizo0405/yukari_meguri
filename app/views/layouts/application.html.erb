@@ -47,33 +47,33 @@
               <% elsif manager_signed_in? %>
                   <li>
                   <%= link_to admin_members_path, class:'nav-link text-dark' do %>
-                  <i class="fas fa-home"></i>会員一覧
+                  <i class="fas fa-users"></i>会員一覧
                   <% end %>
                 </li>
                 <li>
                   <%= link_to admin_root_path, class:'nav-link text-dark'  do %>
-                  <i class="fas fa-home"></i>投稿履歴一覧
+                  <i class="fas fa-list-alt"></i>投稿履歴一覧
                   <% end %>
                 </li>
                 <li>
                   <%= link_to destroy_manager_session_path, method: :delete,class:'nav-link text-dark' do %>
-                  <i class="fas fa-home"></i>ログアウト
+                  <i class="fas fa-door-open"></i>ログアウト
                   <% end %>
                 </li>
               <% else %>
                 <li>
                   <%= link_to new_member_registration_path, class:'nav-link text-dark' do %>
-                  <i class="fas fa-home"></i>新規登録
+                  <i class="fas fa-user-plus"></i>新規登録
                   <% end %>
                 </li>
                 <li>
                   <%= link_to new_member_session_path, class:'nav-link text-dark' do %>
-                  <i class="fas fa-home"></i>ログイン
+                  <i class="fas fa-sign-in-alt"></i>ログイン
                   <% end %>
                 </li>
                 <li>
                   <%= link_to about_path, class:'nav-link text-dark' do %>
-                  <i class="fas fa-home"></i>about
+                  <i class="fas fa-university"></i>about
                   <% end %>
                 </li>
               <% end %>
