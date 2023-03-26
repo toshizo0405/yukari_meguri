@@ -3,9 +3,13 @@ email: 'admin@manager',
 password: '199204',
 )
 
-Member.create!([
-  {email: 'nobunaga@member',password: '199508',last_name: '織田',first_name: '信長',last_name_kana: 'オダ',first_name_kana: 'ノブナガ',}
-  ])
+ Member.create!(
+  [
+  {email: 'nobunaga@member',password: '199508',last_name: '織田',first_name: '信長',last_name_kana: 'オダ',first_name_kana: 'ノブナガ'},
+  {email: 'ieyasu@public',password: '199204',last_name: '徳川',first_name: '家康',last_name_kana: 'トクガワ',first_name_kana: 'イエヤス'},
+  {email: 'hideyashi@gmail',password: '199203',last_name: '豊臣',first_name: '秀吉',last_name_kana: 'トヨトミ',first_name_kana: 'ヒデヨシ'},
+  ]
+  )
 
 Tag.create([
 { name: '古墳時代' },
