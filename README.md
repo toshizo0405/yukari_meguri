@@ -43,3 +43,4 @@
 - designevo  URL https://www.designevo.com/
 - Google Fonts URL https://fonts.google.com/
 - ぱくたそ URL https://www.pakutaso.com/
+- 半透過マルチアイコンfavicon.icoを作ろう! URL https://ao-system.net/alphaicon/
