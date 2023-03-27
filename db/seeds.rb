@@ -51,7 +51,7 @@ Post.create!(
 ハトヤ瑞鳳閣を出発
 
 9：05～9：10
-本光寺¥n
+本光寺
 
 9：30～9：50
 島原大門／輪違屋／角屋／西門（住吉神社）／朱雀大路発掘記念碑
@@ -80,14 +80,69 @@ Post.create!(
 新撰組の聖地巡りがしたい！という方にとってこのプランが役立てば嬉しいです。
 
 ではまた！",member_id: Member.find(1).id,status:1 },
+
+{title: "明治維新発祥の地・長府、決起した高杉晋作たちの心が残る毛利長府の町並みを歩く旅",
+image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post2.jpg"), filename:"sample-post2.jpg"),
+prefectues: '山口県',
+area: "・長府毛利邸
+  山口県下関市長府惣社町4-10
+  ・功山寺
+  山口県下関市長府川端1-2-3
+  ・長府庭園
+  山口県下関市長府黒門東町8-11
+  ",
+  access: "・電車、バス
+  JR「長府駅」からバス「城下町長府」徒歩約10分" ,
+  nearby_information: "特になし",
+  go_around: "長府駅からスタート
+
+長府毛利邸
+↓
+功山寺
+↓
+長府庭園",
+impressions: "山口県下関市の東部にある長府は、古代より長門の政治、文化の中心として栄えた地です。関ヶ原の戦いの後、毛利秀元が5万石で入府し、以来長州の支藩、長府藩の陣屋が構えられ、城下町が整備されていきました。
+
+武家屋敷群の中心である「古江小路」には古い土塀と石畳の町並みが広がり、藩政時代の城下町の面影を今も色濃く残しています。また、乃木神社の辺り、「横枕小路」にも古い土塀が続く古風な町並みが残され、まるでかつての日本の時代に迷い込んだような感覚を味わえます。",
+member_id: Member.find(16).id,status:1 },
+
+{title: "戦国屈指の合戦上手！武田信玄ゆかりの古戦場を巡る旅5選",
+image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post3.jpg"), filename:"sample-post3.jpg"),
+prefectues: '長野県',
+area: "・上田古戦場公園
+  長野県上田市上田下之条330（石碑は近隣の石久摩神社内にあり）
+  ・砥石城跡
+  長野県上田市住吉
+  ・川中島古戦場（八幡原史跡公園）
+  長野県長野市小島田町1384-1
+  ・三増合戦場碑
+  神奈川県愛甲郡愛川町三増1182-3
+  ・三方ヶ原古戦場跡
+  ",
+  access: "・電車、バス
+  JR「長府駅」からバス「城下町長府」徒歩約10分" ,
+  nearby_information: "特になし",
+  go_around: "上田電鉄別所線「上田原駅」から
+
+上田古戦場公園
+↓
+砥石城跡
+↓
+川中島古戦場（八幡原史跡公園）
+↓
+三増合戦場碑
+↓
+三方ヶ原古戦場跡",
+impressions: "現在、武田信玄と上杉謙信の一騎打ちの様子を描いた銅像が川中島の公園に設置されており、当時の模様を彷彿とさせてくれます。また、近辺には山本勘助の墓などもあり、武田信玄の歴史を語る上でも重要な古戦場となっています。",
+member_id: Member.find(2).id,status:1 }
   ]
   )
 
 TagMiddle.create(
  [
- {tag_id: Tag.find(1).id,post_id: Post.find(1).id},
- {tag_id: Tag.find(8).id,post_id: Post.find(1).id}
-
+ {tag_id: Tag.find(8).id,post_id: Post.find(1).id},
+ {tag_id: Tag.find(8).id,post_id: Post.find(2).id},
+ {tag_id: Tag.find(7).id,post_id: Post.find(3).id},
  ]
  )
 
