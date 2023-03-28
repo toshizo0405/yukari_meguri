@@ -447,6 +447,182 @@ impressions:
 家康や秀吉のゆかりの地も巡ってみたいと思いました。",
 member_id: Member.find(8).id,status:1 },
 
+{title: "忠臣蔵のふるさと赤穂 義士ゆかりの地で王道の街歩き！",
+image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post2.jpg"), filename:"sample-post2.jpg"),
+prefectues: '兵庫県',
+area:
+"・息継ぎ広場
+  兵庫県赤穂市加里屋２２１０
+  ・花岳寺
+　兵庫県赤穂市加里屋１９９２
+  ・赤穂城跡
+  兵庫県赤穂市上仮屋１４２４−１
+  ・大石邸長屋門
+  兵庫県赤穂市上仮屋１３１−６",
+  access:
+  "息継ぎ広場へ電車でのアクセス
+　 JR播州赤穂駅から、南へ歩くこと約5分" ,
+  nearby_information: "息継ぎ広場には「義士あんどん」というからくり時計がある。",
+  go_around:
+  "JR播州赤穂駅から
+
+  息継ぎ広場
+  ↓
+  花岳寺
+  ↓
+  赤穂城跡
+  ↓
+  大石邸長屋門",
+impressions:
+"義士のうち、21名が赤穂の城下町や城内に屋敷を構えていました。
+現在は民家や公園、空き地などになっていますが、それぞれの義士宅跡には、義士を紹介する説明板と石標がたっています。
+
+これらの場所を探して、当時の様子をしのぶのも楽しみ方の一つです。
+そのほかにも、義士を祀る大石神社や、塩と義士の館「赤穂市歴史博物館」などもあって、見どころ満載です。ぜひ訪れてどっぷりと赤穂義士にひたっていただけたらと思います。",
+member_id: Member.find(9).id,status:1 },
+
+
+{title: "松尾芭蕉 ゆかりの地巡り 「室の八島」",
+image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post3.jpg"), filename:"sample-post3.jpg"),
+prefectues: '埼玉県',
+area:
+"・奥の細道 矢立初めの地
+  東京都足立区千住橋戸町３１ 千住大橋公園
+  ・草加・おせん公園
+　埼玉県草加市神明１丁目６
+  ・札場河岸公園
+  埼玉県草加市神明２丁目５
+  ・草加の松原
+  埼玉県草加市栄町一丁目、草加市栄町二丁目、草加市栄町三丁目、神明二丁目
+  ・百代橋
+  埼玉県草加市松江１丁目１
+  ・春日部・東陽寺
+  埼玉県春日部市粕壁東２丁目１２−２０ 東陽寺
+  ・野木神社
+  栃木県下都賀郡野木町野木２４０４
+  ・惣社・大神神社
+  栃木県栃木市惣社町４７７",
+  access:
+  "矢立初めの地へ電車でのアクセス
+　京成線 千住大橋駅　徒歩5分" ,
+  nearby_information: "特になし",
+  go_around:
+  "京成線千住大橋駅から
+
+  矢立初めの地
+  ↓
+  草加・おせん公園
+  ↓
+  札場河岸公園
+  ↓
+  草加の松原
+  ↓
+  百代橋
+  ↓
+  春日部・東陽寺
+  ↓
+  野木神社
+  ↓
+  惣社・大神神社",
+impressions:
+"奥の細道で有名な松尾芭蕉のゆかりの地の一部を巡ってみました。
+
+いつか全部行ってみたいなと思ってます。",
+member_id: Member.find(10).id,status:1 },
+
+{title: "松尾芭蕉 ゆかりの地巡り 日光に点在する句碑を訪ねる",
+image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post2.jpg"), filename:"sample-post2.jpg"),
+prefectues: '栃木県',
+area:
+"・光太寺
+  栃木県鹿沼市西鹿沼町８１
+  ・日光二荒山神社
+  栃木県日光市山内２３０７
+  ・含満ヶ淵
+  栃木県日光市匠町
+  ・西行戻り石
+  栃木県日光市稲荷町1-379",
+  access:
+  "光太寺へは東武日光線
+　新鹿沼駅から直線約790m
+　徒歩約18分
+　車で約3分" ,
+  nearby_information: "特記事項はなし",
+  go_around:
+  "新鹿沼駅から
+
+  光太寺
+  ↓
+  日光二荒山神社
+  ↓
+  含満ヶ淵
+  ↓
+  西行戻り石",
+impressions:
+"奥の細道で有名な松尾芭蕉のゆかりの地の一部を巡ってみました。
+
+コンプしてみようかな。",
+member_id: Member.find(10).id,status:1 },
+
+{title: "松尾芭蕉 ゆかりの地巡り 深川を巡る",
+prefectues: '東京都',
+area:
+"・芭蕉記念館
+  三重県伊賀市上野丸之内１１７−１３
+  ・芭蕉庵史跡展望庭園
+  東京都江東区常盤１丁目１−３
+  ・清澄庭園
+  東京都江東区清澄３丁目３−９
+  ・採茶庵跡
+  東京都江東区深川１丁目９",
+  access:
+  "芭蕉記念館へは
+  都営新宿線・都営大江戸線　「森下」駅、A1出口より徒歩7分" ,
+  nearby_information: "特記事項はなし",
+  go_around:
+  "森下駅から
+
+  芭蕉記念館
+  ↓
+  芭蕉庵史跡展望庭園
+  ↓
+  清澄庭園
+  ↓
+  採茶庵跡",
+impressions:
+"奥の細道で有名な松尾芭蕉のゆかりの地の一部を巡ってみました。
+
+コンプしてみようと思う",
+member_id: Member.find(10).id,status:1 },
+
+
+{title: "埼玉の名城をめぐる",
+prefectues: '埼玉県',
+area:
+"・忍城
+  埼玉県行田市本丸１７
+  ・菅谷館
+  埼玉県比企郡嵐山町大字菅谷
+  ・杉山城跡
+  埼玉県比企郡嵐山町杉山６１４",
+  access:
+  "忍城へは
+  秩父鉄道行田市駅から徒歩15分" ,
+  nearby_information: "特にない",
+  go_around:
+  "秩父鉄道行田市駅から
+
+  忍城
+  ↓
+  菅谷館
+  ↓
+  杉山城跡",
+impressions:
+"埼玉県内にある名城を巡ってみました!
+
+他の県にも行こうかな。",
+member_id: Member.find(11).id,status:1 }
+
   ]
   )
 
@@ -463,6 +639,10 @@ TagMiddle.create(
  {tag_id: Tag.find(8).id,post_id: Post.find(9).id},
  {tag_id: Tag.find(8).id,post_id: Post.find(10).id},
  {tag_id: Tag.find(7).id,post_id: Post.find(11).id},
+ {tag_id: Tag.find(8).id,post_id: Post.find(12).id},
+ {tag_id: Tag.find(8).id,post_id: Post.find(14).id},
+ {tag_id: Tag.find(8).id,post_id: Post.find(15).id},
+ {tag_id: Tag.find(7).id,post_id: Post.find(16).id},
 
  ]
  )
