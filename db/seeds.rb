@@ -294,6 +294,159 @@ impressions:
 
 大阪城域内とその周辺を訪れてみると、当時の歴史の痕跡がまだまだ埋もれていました。",
 member_id: Member.find(6).id,status:1 },
+
+
+{title: "坂本龍馬 ゆかりの地を巡る旅 高知編",
+image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post3.jpg"), filename:"sample-post3.jpg"),
+prefectues: '高知県',
+area:
+"・桂浜
+  高知県高知市浦戸
+  ・高知県立坂本龍馬記念館
+  高知県高知市浦戸城山８３０
+  ・高知市龍馬の生まれたまち記念館
+  高知県高知市上町２丁目６−３３
+  ・維新の門
+  高知県高岡郡梼原町川西路
+  ・岩崎弥太郎生家
+  高知県安芸市井ノ口甲",
+  access: "桂浜へは公共機関では、はりまや橋から桂浜行バス終点下車。海岸まで徒歩５分" ,
+  nearby_information: "周辺にかつお船という飲食店がある",
+  go_around:
+  "バス停はりまや橋から
+
+  桂浜
+  ↓
+  高知県立坂本龍馬記念館
+  ↓
+  高知市龍馬の生まれたまち記念館
+  ↓
+  維新の門
+  ↓
+  岩崎弥太郎生家",
+impressions:
+"坂本龍馬のゆかりの地を巡ってみました!
+
+他にも京都や長崎にもゆかりの地があるみたいなのでそこも巡ってみたいと思いました。",
+member_id: Member.find(7).id,status:1 },
+
+
+{title: "坂本龍馬 ゆかりの地を巡る旅 京都編",
+image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post3.jpg"), filename:"sample-post3.jpg"),
+prefectues: '京都府',
+area:
+"・寺田屋
+  京都府京都市伏見区南浜町２６３
+  ・円山公園
+  京都府東山区円山町
+  ・京都霊山護国神社
+  京都府京都市東山区清閑寺霊山町１",
+  access:
+  "寺田屋へは公共機関では、JR京都駅バス停のC4乗り場から、
+  京都市営バス 19号系統（京阪国道経由 中書島・横大路車庫行き）に乗り、
+　京橋バス停で下車します。
+
+　京都駅前バス停から、京橋バス停までの所要時間は、
+　約33分になります。
+　運賃は、230円になります。
+　バスは、1時間に約1本あります
+
+　京橋バス停で下車したら、南方向に進んでください。
+
+　南方向は、バスの進行方向になります。
+
+　すぐ先を左折します。
+　すると、すぐ左側に寺田屋が見えてきます。" ,
+  nearby_information:
+  "周辺の宿泊施設はＧＡＦＵ　ＨＯＳＴＥＬ、旅籠くれたけ庵、アーバンイン伏見の三件があります。",
+  go_around:
+  "JR京都駅バス停のC4乗り場から
+
+  寺田屋
+  ↓
+  円山公園
+  ↓
+  京都霊山護国神社",
+impressions:
+"坂本龍馬のゆかりの地が京都にあるので巡ってみました!
+
+他に長崎にもゆかりの地があるみたいなのでそこも巡ってみたいと思いました!",
+member_id: Member.find(7).id,status:1 },
+
+
+{title: "坂本龍馬 ゆかりの地を巡る旅 長崎編",
+image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post4.jpg"), filename:"sample-post4.jpg"),
+prefectues: '長崎県',
+area:
+"・風頭公園
+  長崎県長崎市伊良林３丁目４−５１０
+  ・亀山社中記念館
+　長崎県長崎市伊良林２丁目７−２４
+  ・龍馬のぶーつ像
+  長崎県長崎市伊良林２丁目５−１１
+  ・グラバー園
+  長崎県長崎市南山手町８−１",
+  access:
+  "風頭公園へはJR長崎駅の長崎駅前東口というバス停があり、
+  そこからバスに乗って風頭山というバス停で降りる。" ,
+  nearby_information: "風頭公園の入り口近くに「小川ハタ店・長崎ハタ資料館」があります。",
+  go_around:
+  "バス停 風頭山からスタート
+
+  風頭公園
+  ↓
+  亀山社中記念館
+  ↓
+  龍馬のぶーつ像
+  ↓
+  グラバー園",
+impressions:
+"坂本龍馬のゆかりの地が長崎にもあるみたいなので巡ってみました!
+
+これで鹿児島以外は行けたかな。",
+member_id: Member.find(7).id,status:1 },
+
+
+{title: "織田信長 ゆかりの地巡り",
+image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post1.jpg"), filename:"sample-post1.jpg"),
+prefectues: '愛知県',
+area:
+"・犬山城
+  愛知県犬山市犬山北古券65-2
+  ・有楽苑
+　愛知県犬山市犬山御門先1番地
+  ・小牧山城
+  愛知県小牧市堀の内1-1
+  ・清洲城
+  愛知県清須市朝日城屋敷1-1
+  ・熱田神宮
+  愛知県名古屋市熱田区神宮1丁目1番1号
+  ・桶狭間古戦場伝説地・高徳院
+  愛知県豊明市栄町南舘11",
+  access:
+  "犬山城へ電車でのアクセス
+　 名鉄「名古屋」駅から、名鉄「犬山」駅下車。徒歩約17分" ,
+  nearby_information: "特になし。",
+  go_around:
+  "名鉄「名古屋」駅から
+
+  犬山城
+  ↓
+  有楽苑
+  ↓
+  小牧山城
+  ↓
+  清洲城
+  ↓
+  熱田神宮
+  ↓
+  桶狭間古戦場伝説地・高徳院",
+impressions:
+"タイトルにもあるとおり、織田信長のゆかりの地を巡ってみました。
+
+家康や秀吉のゆかりの地も巡ってみたいと思いました。",
+member_id: Member.find(8).id,status:1 },
+
   ]
   )
 
@@ -306,6 +459,11 @@ TagMiddle.create(
  {tag_id: Tag.find(7).id,post_id: Post.find(4).id},
  {tag_id: Tag.find(1).id,post_id: Post.find(5).id},
  {tag_id: Tag.find(7).id,post_id: Post.find(7).id},
+ {tag_id: Tag.find(8).id,post_id: Post.find(8).id},
+ {tag_id: Tag.find(8).id,post_id: Post.find(9).id},
+ {tag_id: Tag.find(8).id,post_id: Post.find(10).id},
+ {tag_id: Tag.find(7).id,post_id: Post.find(11).id},
+
  ]
  )
 
