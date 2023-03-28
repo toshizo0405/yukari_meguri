@@ -642,7 +642,7 @@ TagMiddle.create(
  {tag_id: Tag.find(8).id,post_id: Post.find(12).id},
  {tag_id: Tag.find(8).id,post_id: Post.find(14).id},
  {tag_id: Tag.find(8).id,post_id: Post.find(15).id},
- {tag_id: Tag.find(7).id,post_id: Post.find(16).id},
+ {tag_id: Tag.find(7).id,post_id: Post.find(16).id}
 
  ]
  )
