@@ -31,7 +31,7 @@
 - 実装機能リストのURL https://docs.google.com/spreadsheets/d/1FTpo7SgzDipLCw7tuJ71GWnrOgoXP4jIGrLKxsMD6Bs/edit#gid=885378170
 
 ## 開発環境
-- OS：Linux(CentOS)
+- OS：Linux(AmazonLinux2)
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
 - フレームワーク：Ruby on Rails
 - JSライブラリ：jQuery
